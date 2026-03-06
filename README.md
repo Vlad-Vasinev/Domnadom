@@ -1,5 +1,5 @@
 # Domnadom
-- [pdf-presentation](https://github.com/Vlad-Vasinev/Vlad-Vasinev/blob/main/dobuy_presentation.pdf)
+- [pdf-presentation](https://github.com/Vlad-Vasinev/Vlad-Vasinev/blob/main/domnadom_presentation.pdf)
 - click the left bottom corner in order to see list of pages
   - <img src="https://github.com/Vlad-Vasinev/Vlad-Vasinev/blob/main/list%20of%20pages.PNG" width="250">
 ## This project is about: 💻
