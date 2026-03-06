@@ -1,0 +1,10 @@
+.movable-title
+  clip-path: inset(100% 0 0 0)
+  &.animate-text
+    animation: mask 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards
+
+@keyframes mask
+  from
+    clip-path: inset(100% 0 0 0)
+  to
+    clip-path: inset(0 0 0 0)

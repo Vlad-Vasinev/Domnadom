@@ -1,0 +1,69 @@
+
+.line-contact
+  +r($sm)
+    display: flex
+    gap: 11px
+  &__icon
+    display: none 
+    +r($sm)
+      border-radius: 6px
+      border: 1px solid $CrystalBell
+      display: grid 
+      justify-content: center
+      align-items: center
+      width: 90px
+      height: 90px 
+    img, svg 
+      width: 72px
+      height: auto
+  &__wrapper
+    display: flex
+    align-items: center
+    gap: aCalc(26)
+    margin-bottom: aCalc(24)
+    +r($sm)
+      flex-direction: column
+      gap: 6px
+      align-items: flex-start
+      margin-bottom: 44px
+    .label-list 
+      margin-left: auto
+      +r($sm)
+       margin-left: 0
+  &__item 
+    display: flex
+    align-items: center
+    gap: aCalc(6)
+    +r($sm)
+      gap: 5px
+      flex-wrap: wrap
+    span 
+      display: flex
+      align-items: center
+      gap: aCalc(6)
+      +r($sm)
+        gap: 5px
+      &.reviews 
+        flex-shrink: 0
+        .text-m
+          color: $NamaraGrey
+    &._mobHidden
+      +r($sm)
+        display: none
+    &._mobVisible
+      display: none
+      +r($sm)
+        display: flex
+    &-icon 
+      width: aCalc(18)
+      height: aCalc(18)
+      flex-shrink: 0
+      display: grid 
+      justify-content: center
+      align-items: center
+      +r($sm)
+        width: 16px
+        height: 16px
+      img, svg 
+        width: 100%
+        height: 100%

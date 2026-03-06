@@ -1,0 +1,292 @@
+
+.developers-block 
+  padding: aCalc(24) 0 
+  border-top: 1px solid $CrystalBell
+  display: flex
+  gap: aCalc(60)
+  +r($sm)
+    flex-direction: column
+    padding: 24px 0 
+    gap: 16px
+  &:last-child
+    border-bottom: 1px solid $CrystalBell
+  &__slider 
+    @extend .swiper !optional
+    width: 100%
+    +r($sm)
+      overflow: visible
+      margin: 0
+      //padding: 0 0 0 12px
+    &:not(.swiper-initialized)
+      .developers-block__content
+        +r($sm)
+          display: grid
+          align-items: unset
+          grid-auto-columns: 66.612%
+          -ms-grid-columns: unset
+          grid-template-columns: unset
+          grid-auto-flow: column
+          gap: 8px
+  .advertisement-block
+    width: 100%
+    justify-content: space-between
+    +r($sm)
+      padding: 0
+      overflow: hidden
+    &__info 
+      gap: aCalc(16)
+      +r($sm)
+        gap: 16px
+        padding: 16px 16px 16px 16px  
+    &__content
+      width: aCalc(625)
+      height: aCalc(189)
+      +r($sm)
+        width: 100%
+        width: 100vw
+        height: 80px
+        margin: 0 -16px
+    button.button-m
+      margin-top: aCalc(8)
+      background-color: $White 
+      color: $BaseBlack
+      border-radius: aCalc(6)
+      +r($sm)
+        margin-top: 17px 
+        border-radius: 6px
+        width: 100%
+        span 
+          justify-content: center
+  &__icon 
+    width: aCalc(90)
+    height: aCalc(90)
+    // height: auto
+    border-radius: aCalc(6)
+    border: 1px solid $CrystalBell
+    display: grid 
+    justify-content: center
+    align-items: center
+    +r($sm)
+      border-radius: 6px
+      width: 80px
+      height: 80px
+    img, svg 
+      width: aCalc(72)
+      height: auto
+      +r($sm)
+        width: 64px
+        height: 36px
+  &__info 
+    width: aCalc(415)
+    flex-shrink: 0
+    +r($sm)
+      width: unset
+    .d-card
+      display: block
+      //height: unset
+      overflow: unset
+      border-radius: unset
+      ul.label-list
+        position: unset 
+        margin-top: aCalc(16)
+        +r($sm)
+          margin-top: 16px
+        li 
+          background-color: $Gray
+    &-user 
+      display: flex
+      gap: aCalc(16)
+      margin-bottom: aCalc(24)
+      +r($sm)
+        gap: 12px
+        margin-bottom: 12px
+      .user 
+        display: flex
+        flex-direction: column
+        gap: aCalc(8)
+        +r($sm)
+          gap: 6px
+        &__titles 
+          .text-s 
+            color: $NamaraGrey
+        &__phone 
+          .text-s 
+            font-weight: 500
+            display: block
+        &__projects 
+          display: flex
+          align-items: center
+          gap: aCalc(12)
+          +r($sm)
+            gap: 6px
+          &-item
+            &._star
+              display: flex
+              gap: aCalc(3)
+              +r($sm)
+                gap: 3px
+              svg 
+                width: aCalc(16)
+                height: aCalc(16)
+                +r($sm)
+                  width: 14px
+                  height: 14px
+              .text-s 
+                color: $BaseBlack !important
+            &:not(.star) 
+              .text-s 
+                color: $NamaraGrey
+            span 
+              display: block
+              width: 1px 
+              height: aCalc(10)
+              background-color: $Silverback
+              +r($sm)
+                height: 10px
+  &__content 
+    @extend .swiper-wrapper !optional
+    display: grid 
+    grid-template-columns: repeat(3, 1fr)
+    gap: aCalc(20)
+    +r($sm)
+      display: flex
+      gap: unset
+      width: 100vw
+      overflow: unset
+    &-item 
+      @extend .swiper-slide !optional
+      height: aCalc(220)
+      border-radius: aCalc(6)
+      overflow: hidden
+      position: relative
+      +r($sm)
+        width: unset
+        flex-shrink: 0
+        height: 140px
+        border-radius: 6px
+      &:last-child
+        +r($sm)
+          margin-right: 0 !important
+      &:hover 
+        img 
+          +dsk
+            transform: scale(1.05)  
+      .d-card._last 
+        height: aCalc(220) !important
+        +r($sm)
+          height: 140px !important
+      img, video 
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: transform .3s
+      .label 
+        position: absolute
+        z-index: 1
+        padding: aCalc(4) aCalc(8)
+        border-radius: aCalc(4)
+        bottom: aCalc(8)
+        left: aCalc(8)
+        background-color: $White
+        display: flex
+        align-items: center
+        gap: aCalc(8)
+        +r($sm)
+          padding: 4px 8px
+          border-radius: 4px
+          bottom: 8px
+          left: 8px
+          gap: 8px
+          -webkit-transform: translate3d(0, 0, 0)
+          -webkit-transform-style: preserve-3d
+        span 
+          width: 1px 
+          height: aCalc(14)
+          background-color: $Silverback
+          +r($sm)
+            height: 10px
+        .text-m 
+          font-weight: 500
+
+.developers-imgGrid 
+  @extend .swiper !optional
+  margin-bottom: aCalc(60)
+  +r($sm)
+    margin-bottom: 40px
+    overflow: visible
+    margin: 0 -12px 40px
+  &__wrapper
+    @extend .swiper-wrapper !optional
+    display: grid 
+    grid-template-columns: aCalc(631) aCalc(631) aCalc(293)
+    gap: aCalc(4)
+    +r($sm)
+      display: flex
+      width: 100vw
+      overflow: unset
+      gap: unset
+  .slider-pagination
+    display: none
+    +r($sm)
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 4px
+      padding: 11px 12px
+      border-bottom: 1px solid $CrystalBell
+    .swiper-pagination-bullet
+      margin: 0
+      width: 4px 
+      height: 4px 
+      border-radius: 6px
+      background-color: $CerebralGrey
+      &.swiper-pagination-bullet-active
+        background-color: $SyntheticPumpkin
+        width: 24px
+  &__item 
+    @extend .swiper-slide !optional
+    position: relative
+    overflow: hidden
+    border-radius: aCalc(6)
+    +r($sm)
+      height: 271px
+      border-radius: 0
+    &._mobOnly
+      display: none 
+      +r($sm)
+        display: block
+    img, video 
+      width: 100%
+      height: 100%
+      object-fit: cover
+    .d-card._last
+      height: aCalc(203)
+      +r($sm)
+        height: 271px
+        border-radius: 0
+    &._last
+      display: flex
+      flex-direction: column
+      gap: aCalc(4)
+      +r($sm)
+        display: none
+      .d-card._last.open-grid
+        cursor: pointer
+    &._icon 
+      position: relative
+      .icon 
+        position: absolute
+        top: aCalc(8)
+        left: aCalc(8)
+        width: aCalc(90)
+        height: aCalc(90)
+        display: grid 
+        justify-content: center
+        align-items: center
+        background-color: $White
+        border-radius: aCalc(6)
+        +r($sm)
+          display: none
+        svg, img 
+          width: aCalc(72)
+          height: auto

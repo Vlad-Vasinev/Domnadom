@@ -1,0 +1,14 @@
+.d-article
+  .h2, h2
+    @extend .text-xlBold
+    margin-top: aCalc(48)
+    margin-bottom: aCalc(24)
+    +r($sm)
+      margin-bottom: 16px
+      margin-top: 24px
+  p 
+    @extend .d-p1
+  p + p 
+    margin-top: aCalc(12)
+    +r($sm) 
+      margin-top: 12px

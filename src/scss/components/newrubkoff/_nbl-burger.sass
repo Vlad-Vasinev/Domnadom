@@ -1,0 +1,44 @@
+
+.nbl-burger.n-burger_mob 
+  display: none 
+  +r($sm)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 24px
+    width: 24px 
+    height: 24px
+    div
+      height: 2px
+      background-color: #000000
+      width: 20px
+    div + div 
+      margin-top: 4px
+  &._active 
+    position: relative
+    z-index: 1
+    &::after 
+      transform: translateX(0%)
+
+  .burger-item
+    transition: all .4s
+    position: relative
+    height: 2px
+    background-color: #202020
+    width: 20px
+
+  .burger-item + .burger-item 
+    margin-top: 4px
+
+  .burger-first.burger-item_active
+    top: 5px
+    transform: rotate(45deg)
+
+  .burger-second.burger-item_active
+    visibility: hidden
+    opacity: 0
+
+  .burger-third.burger-item_active
+    bottom: 7px
+    transform: rotate(-45deg) 

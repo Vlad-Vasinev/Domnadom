@@ -1,0 +1,22 @@
+
+.label-list 
+  display: flex
+  align-items: center
+  gap: aCalc(2)
+  +r($sm)
+    gap: 2px
+    flex-wrap: wrap
+  &__item 
+    padding: aCalc(3) aCalc(8)
+    border-radius: aCalc(4)
+    background-color: $White 
+    +r($sm)
+      padding: 3px 8px 
+      border-radius: 4px
+      -webkit-transform: translate3d(0, 0, 0)
+      -webkit-transform-style: preserve-3d
+    &._active 
+      background-color: $SyntheticPumpkin
+      color: $White
+    &.label-list__item--bg 
+      background-color: $Gray

@@ -1,0 +1,61 @@
+
+.nbl-cookies 
+  transform: translateY(0) scale(0)
+  position: fixed
+  opacity: 0
+  z-index: 1000
+  transition: opacity .1s, transform .2s
+  width: aCalc(456)
+  padding: aCalc(16)
+  background-color: #ffffff
+  top: auto 
+  border-radius: aCalc(6)
+  bottom: aCalc(24)
+  right: aCalc(24)
+  +r($sm)
+    right: 0
+    left: 0
+    bottom: 0
+    border-radius: none 
+    padding: 16px
+    width: unset
+  &._active 
+    opacity: 1
+    transform: translateY(0) scale(1)
+  &__body 
+    display: flex
+    gap: aCalc(12)
+    flex-direction: column
+    +r($sm)
+      gap: 12px
+    .h4
+      font-weight: 700
+    &-btns 
+      display: flex
+      align-items: center
+      gap: aCalc(8)
+      +r($sm)
+        gap: 8px
+      a, button 
+        font-size: aCalc(16)
+        line-height: aCalc(22)
+        font-weight: 400
+        +r($sm)
+          font-size: 14px 
+          line-height: 19px
+  &__close 
+    border-radius: aCalc(6)
+    background-color: #000000
+    color: #ffffff
+    padding: aCalc(10) aCalc(16)
+    +r($sm)
+      padding: 10px 16px
+      border-radius: 6px
+  &__link 
+    padding: aCalc(10) aCalc(16)
+    border-radius: aCalc(6)
+    color: #000000
+    background-color: #f1f1f1
+    +r($sm)
+      padding: 10px 16px
+      border-radius: 6px

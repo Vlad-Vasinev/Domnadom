@@ -1,0 +1,121 @@
+@imprt _lazy
+.form-policy
+  color: #828282
+  a
+    text-decoration: underline
+    
+.page__container_catalog .page__block > .product-card.product-card_special
+  margin: aCalc(80) 0
+  +mob
+    margin: 40px 0
+
+.ymaps-2-1-79-balloon
+  top: 0 !important // vlad-v
+
+.slider-navigation-next, .slider-navigation-prev
+  background-color: #F9F9F9
+  height: max-content
+  +aProp(border-radius, 12)
+  +mob
+    border-radius: 12px
+
+  .slide-button-inner > span, > span:only-child
+    display: block
+    +aProp(padding, 12)
+    +aProp(border-radius, 12)
+    +mob
+      border-radius: 12px
+      padding: 10px
+    svg
+      +aProp(width, 24)
+      height: auto
+      aspect-ratio: 1
+      +mob
+        width: 20px
+.slider-navigation-prev
+.slider-navigation-next
+  > * 
+    transform: rotate(180deg)
+
+.slider-pagination-navigation
+  +dsk
+    width: 100%
+    margin: 0
+    +aProp(padding, 16)
+    justify-content: center
+    align-items: center
+  .swiper-pagination
+    display: flex
+    +dsk
+      width: max-content
+      margin: 0 aCalc(32)
+      position: static
+    .swiper-pagination-bullet
+      background-color: #CED0DC
+      opacity: 0.5
+      transition-duration: 0.2s
+      transition-property: transform, background-color, opacity, background-color
+      display: block
+      +dsk
+        +wah(aCalc(6))
+      +mob
+        +wah(6px)
+      &.swiper-pagination-bullet-active
+        opacity: 1
+        background-color: #224646
+
+.slider-corner-navigation, .slider-pagination-navigation
+  display: flex
+  position: absolute
+  bottom: 0
+  z-index: 2
+  +aProp(margin, 16)
+  +aProp(gap, 6)
+  +mob
+    left: unset
+    right: 0
+    margin: 10px
+    gap: 6px
+
+.slider-pagination-navigation_static
+  position: static
+  +mob
+    width: 100%
+    margin: 0 auto
+    padding-bottom: 24px
+    align-items: center
+    gap: 0
+    justify-content: center
+  .swiper-pagination
+    position: static
+    width: max-content
+
+    align-items: center
+    +mob
+      margin: 0
+      padding: 11px 12px
+      gap: 4px
+      border-radius: 24px
+    .swiper-pagination-bullet
+      +mob
+        +wah(6px)
+        border-radius: 6px
+
+
+[data-fs-ctr]._fs-inited
+  [data-fs-full]
+    cursor: zoom-in
+
+.section-link .section-link__img
+  aspect-ratio: 89/69
+
+.page__container_catalog  .interline-banner
+  margin: aCalc(80) 0
+
+img.full-width-img
+  width: 100%
+  height: auto
+  &.full-width-img_rounded
+    +aProp(border-radius, 12)
+    +mob
+      border-radius: 12px

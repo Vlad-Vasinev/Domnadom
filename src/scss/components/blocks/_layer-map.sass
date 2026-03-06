@@ -1,0 +1,113 @@
+
+:root 
+  --data-text-left: 50%
+  --data-text-top: 50%
+.layer-map 
+  position: relative
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  +r($sm)
+    display: none
+  &._mobile 
+    display: none
+    +r($sm)
+      margin: 0 -12px
+      display: block
+      //height: 747px
+      height: 521px
+      overflow: auto
+      -webkit-overflow-scrolling: touch 
+      .layer-map__scroll-container
+        //width: 1328px 
+        width: 925px 
+        //height: 747px 
+        height: 521px
+        position: relative
+        display: flex
+        justify-content: center
+        display: grid 
+        place-items: center 
+        transform-origin: center center
+        -webkit-overflow-scrolling: touch
+        will-change: transform
+        touch-action: pan-x pan-y
+      .main-img
+        display: block
+        width: 100% 
+        height: 100% 
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 1
+        object-fit: contain 
+        -webkit-transform: translate3d(0, 0, 0)
+        transform: translate3d(0, 0, 0)
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+      svg.main-svg
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100% 
+        z-index: 2
+        grid-area: unset 
+        -webkit-transform: translate3d(0, 0, 0)
+        transform: translate3d(0, 0, 0)
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+  &__link 
+    cursor: unset
+    position: relative
+    z-index: 1002
+    &._active 
+      cursor: pointer
+  &__path 
+    -webkit-transition: all 0.3s
+    transition: all 0.3s
+    opacity: 0.4
+    &._number 
+      opacity: 1
+    &.house-path_active 
+      fill: rgba(245, 84, 4, 1)
+      opacity: 0.7
+  .badge-rect
+    transition: fill .3s
+  svg.main-svg
+    grid-area: map
+    width: 100%
+    height: 100%
+    position: absolute
+    z-index: 2
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+  img 
+    width: 100%
+    +r($sm)
+      display: none
+  .small-card 
+    min-width: aCalc(317)
+    position: absolute
+    top: 50%
+    left: var(--data-text-left)
+    right: auto
+    margin: 0 auto
+    transform: translateY(-50%) translateX(-50%)
+    background-color: #FFFFFF
+    z-index: 0
+    opacity: 0
+    transition: opacity 0.3s, width 0.3s, padding 0.3s
+    +r($sm)
+      transition: opacity 0.3s, top 0.3s, width 0.3s, padding 0.3s
+    &.layers__info_active 
+      top: var(--data-text-top)
+      opacity: 1
+      z-index: 1000
+    .title 
+      flex-shrink: 0
+      .icon 
+        flex-shrink: 0

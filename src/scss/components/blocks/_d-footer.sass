@@ -1,0 +1,128 @@
+
+.d-footer 
+  padding-top: aCalc(20)
+  background-color: $OldBrownCrayon
+  +r($sm)
+    padding: 24px 12px 101px
+  .page__block.d-middle 
+    +r($sm)
+      padding: 0 !important
+  div, a 
+    color: $White
+  &__top 
+    display: flex
+    gap: 25.1041666667%
+    margin-bottom: aCalc(120)
+    +r($sm)
+      flex-direction: column
+    &._mob
+      .d-footer__top-content 
+        +r($sm)
+          display: flex
+          align-items: center
+          justify-content: space-between
+        .caps-m 
+          margin: 0
+    .caps-m
+      opacity: 0.4
+      width: aCalc(650)
+      flex-shrink: 0
+      +r($sm)
+        width: 236px 
+        margin: 0 auto
+        text-align: center
+    &-content 
+      display: flex
+      gap: aCalc(180)
+      +r($sm)
+        display: none
+      .caps-m
+        width: unset
+      .text-l 
+        opacity: 0.4
+  &__middle 
+    display: flex
+    align-items: center
+    gap: 25.1041666667%
+    +r($sm)
+      gap: 31px
+      flex-direction: column
+    &-list 
+      display: flex
+      flex-direction: column
+      gap: aCalc(8)
+      +r($sm)
+        padding-top: 40px
+        width: 100%
+        border-top: 1px solid rgba(255, 255, 255, 0.1)
+        display: grid 
+        grid-template-columns: repeat(2, 1fr)
+        gap: 10px 0
+        align-self: baseline
+      li a
+        color: $White 
+        opacity: 0.4
+      a  
+        transition: opacity .3s
+        &:hover 
+          +dsk
+            opacity: 1
+    &-content 
+      width: aCalc(650)
+      +r($sm)
+        width: unset
+      svg, img
+        margin-bottom: aCalc(24)
+        +r($sm)
+          margin: 0 auto 8px
+      a.text-xxlBold 
+        margin-bottom: aCalc(16)
+        display: block
+        +r($sm)
+          text-align: center
+          margin-bottom: 6px
+          margin-left: auto
+          margin-right: auto
+      .text-l._phone
+        margin-top: aCalc(24)
+        display: block
+        opacity: 0.4
+        transition: opacity .3s
+        width: max-content
+        +r($sm)
+          margin-top: 14px
+          margin-right: auto
+          margin-left: auto
+          text-align: center
+        &:hover
+          +dsk
+            opacity: 1
+      .text-l._text
+        opacity: 0.4
+        +r($sm)
+          text-align: center
+  &__svg 
+    margin: aCalc(127) aCalc(20) aCalc(30)
+    display: flex
+    flex-direction: column
+    gap: aCalc(24)
+    +r($sm)
+      width: 100vw
+      gap: 24px
+      margin: 31px -12px
+    svg, img 
+      width: 100%
+    img:nth-child(1)
+      +r($sm)
+        height: 96px
+    img:nth-child(2)
+      +r($sm)
+        display: none
+    svg
+      display: none
+      +r($sm)
+        display: block
+        margin-left: 12px
+        width: auto
+        margin-right: 12px
+        height: 34px

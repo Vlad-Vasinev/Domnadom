@@ -1,0 +1,30 @@
+@use "sass:selector";
+@import "./vendor/normalize";
+
+// стили для свайпера
+@import "../../node_modules/swiper/swiper-bundle.min";
+
+@import "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox"; 
+@import "../../node_modules/@fancyapps/ui/dist/carousel/carousel"; 
+@import "../../node_modules/@fancyapps/ui/dist/carousel/carousel.thumbs"; 
+@import "../../node_modules/@fancyapps/ui/dist/carousel/carousel.autoplay"; 
+
+@import "../../node_modules/aos/dist/aos";
+// ПЕРЕМЕННЫЕ СДЕЛАННЫЕ ДЛЯ РАЗДЕЛЕНИЯ СТИЛЕЙ
+// ЕСЛИ УКАЗАТЬ FALSE - МОБИЛЬНЫЕ ИЛИ ДЕСТОПНЫЕ МЕДИА НЕ ВКЛЮЧАТСЯ В ИТОГОВЫЙ ФАЙЛ 
+$mobileLayout: true; 
+$desktopLayout: true; 
+
+// базовые подключения
+@import "vars";
+@import "mixins/*";
+@import "fonts";
+@import "general";
+@import "ui";
+
+// подключения компонентов страницы
+
+@import "./components/blocks/*.sass";
+@import "./components/*.sass";
+@import "./components/newrubkoff/*.sass";
+

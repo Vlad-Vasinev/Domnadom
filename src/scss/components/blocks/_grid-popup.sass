@@ -1,0 +1,58 @@
+
+.grid-images
+  position: fixed
+  padding: aCalc(20)
+  top: 0
+  height: 100vh
+  background-color: $White
+  transform: translateY(100%)
+  transition: transform .3s
+  z-index: 200
+  +r($sm)
+    padding: 20px
+    top: 0
+    width: 100vw
+    transform: translateY(0) translateX(100%)
+  &._active 
+    transform: translateY(0) translateX(0)
+  &__wrapper 
+    display: grid 
+    gap: aCalc(20)
+    grid-template-columns: repeat(6, 1fr)
+    +r($sm)
+      gap: 20px
+      grid-template-columns: repeat(2, 1fr)
+  &__close 
+    cursor: pointer
+    margin-left: auto
+    width: aCalc(24)
+    height: aCalc(24)
+    display: grid
+    justify-content: center
+    align-items: center
+    margin-bottom: aCalc(64)
+    +r($sm)
+      width: 24px
+      height: 24px
+      margin-bottom: 40px
+    &:hover 
+      svg, img 
+        +dsk
+          transform: rotate(90deg)
+    svg, img 
+      transition: transform .3s
+      width: 100% 
+      height: 100%
+  &__item 
+    width: aCalc(297)
+    height: aCalc(196)
+    border-radius: aCalc(4)
+    overflow: hidden
+    +r($sm)
+      width: unset
+      height: 120px
+      border-radius: 4px
+    img 
+      width: 100%
+      height: 100%
+      object-fit: cover

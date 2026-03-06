@@ -1,0 +1,39 @@
+block vars 
+  - var breadcrumbText = ["Main", "Contacts"]
+.page__container
+  .scroll-marker
+  include ../blocks/_dFixedBlock
+
+  .contacts
+    .contacts__info 
+      include ../blocks/_breadcrumb
+      .text-h1.d-mainTitle How to find us
+      .contacts__icon 
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <g clip-path="url(#clip0_172_2783)">
+            <path d="M38.776 31.6L32.16 14.9067L26.5813 24.6667L21.0027 14.9067L14.3867 31.6053H12.4747V34.1147H22.4373V31.6053H20.9627L22.3973 27.4587L26.5813 34.312L30.7653 27.4587L32.2 31.6053H30.7253V34.1147H40.728V31.6053L38.776 31.6ZM53.0027 26.5013C53.0044 23.0206 52.3201 19.5737 50.9889 16.3576C49.6577 13.1416 47.7057 10.2194 45.2445 7.75816C42.7833 5.29693 39.8611 3.34492 36.645 2.01373C33.4289 0.682532 29.982 -0.00174917 26.5013 3.35782e-06C11.8773 3.35782e-06 0 11.8747 0 26.5013C0 33.8347 2.98933 40.448 7.77067 45.2293C8.07007 45.5314 8.45255 45.7376 8.86945 45.8216C9.28635 45.9057 9.71884 45.8639 10.1119 45.7015C10.505 45.5392 10.8409 45.2636 11.0769 44.9098C11.3129 44.556 11.4384 44.14 11.4373 43.7147C11.4382 43.1335 11.2091 42.5755 10.8 42.1627C6.65808 38.0039 4.33691 32.3708 4.34667 26.5013C4.34667 14.2667 14.2667 4.304 26.5013 4.304C38.736 4.304 48.6987 14.2667 48.6987 26.5013C48.7052 29.4176 48.1346 32.3064 47.0197 35.0011C45.9048 37.6959 44.2677 40.1434 42.2027 42.2027L23.472 60.9307L26.5013 64L45.272 45.2293C47.7314 42.7713 49.6806 39.8513 51.0073 36.6372C52.334 33.4232 53.0121 29.9785 53.0027 26.5013Z" fill="#2D9126"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_172_2783">
+              <rect width="64" height="64" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      .text-xxlBold Domodedovskaya <br/>Kashirskoe shosse, 63k1
+      p.text-l
+        span 3 minutes from the metro
+        span /
+        span 7 days a week from 10:00 to 19:00
+      .contacts__links
+        a.text-l(href="tel:+74993944907") +7 (499) 394-49-07
+        a.text-l(href="mailto:sales@domnadom.ru") sales@domnadom.ru
+      a.button-m.primary-btn(href="#") Get directions
+      a.button-m.primary-btn._mob(href="#") Route on Yandex Maps
+      a.button-m.primary-btn._mob(href="#") Route in Yandex Navigator
+    .contacts__map
+      .map-block.map-block_on-map
+        .js-ymap.js-ymap-lf-colorful(
+          data-icon-src="img/dom/map/balloon-2.png"
+          data-longitude="37.718669"
+          data-latitude="55.610845"
+          data-action='api/customization-2.json')

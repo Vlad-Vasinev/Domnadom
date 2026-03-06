@@ -1,0 +1,128 @@
+
+.advertisement-grid 
+  display: flex
+  flex-direction: column
+  gap: aCalc(80)
+  width: aCalc(1088)
+  +r($sm)
+    gap: 24px
+    width: unset
+
+.advertisement-block
+  padding: aCalc(24) 0 aCalc(24) aCalc(24)
+  border-radius: aCalc(6)
+  background-color: $OldBrownCrayon
+  display: flex 
+  //align-items: center
+  +r($sm)
+    flex-direction: column
+    gap: 16px
+    padding: 16px
+    border-radius: 6px
+  &._long 
+    .advertisement-block__info
+      width: aCalc(483)
+  &__info 
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: aCalc(70)
+    flex-shrink: 0
+    width: aCalc(584)
+    color: $White
+    +r($sm)
+      width: unset
+    &-content
+      display: flex  
+      flex-direction: column
+      gap: aCalc(4)
+      width: aCalc(483)
+      +r($sm)
+        width: unset
+        gap: unset
+    span
+      display: flex  
+      align-items: center
+      gap: aCalc(8)
+  &__content 
+    height: aCalc(230)
+    +r($sm)
+      height: 111px
+      margin-top: 16px
+      margin-bottom: -16px
+      margin-right: -16px
+      margin-left: -16px
+    img, svg 
+      width: 100%
+      height: 100% 
+      object-fit: none
+      +r($sm)
+        object-fit: cover
+
+.advertisement-item 
+  padding: aCalc(24)
+  border-radius: aCalc(12)
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08)
+  border: 1px solid $CrystalBell
+  background-color: $White
+  display: flex
+  gap: aCalc(16)
+  +r($sm)
+    padding: 16px
+    border-radius: 6px
+    gap: 12px
+    justify-content: space-between
+  &__content
+    width: aCalc(90)
+    height: aCalc(90)
+    border-radius: aCalc(6)
+    border: 1px solid $CrystalBell
+    display: grid 
+    justify-content: center
+    align-items: center
+    +r($sm)
+      order: 2
+      border-radius: 6px
+      width: 80px
+      height: 80px
+    img, svg 
+      width: aCalc(72)
+      height: aCalc(40)
+      +r($sm)
+        width: 64px
+        height: 36px
+  &__info 
+    display: flex
+    flex-direction: column
+    gap: aCalc(32)
+    +r($sm)
+      gap: 16px
+      width: auto
+      //width: 140px
+    .titles 
+      .text-s
+        opacity: 0.4
+    .user 
+      display: flex
+      align-items: center
+      gap: aCalc(26)
+      +r($sm)
+        align-items: flex-start
+        flex-direction: column
+        gap: 6px
+      &__el 
+        display: flex
+        align-items: center
+        gap: aCalc(6)
+        +r($sm)
+          align-items: flex-start
+          gap: 5px
+      &__icon 
+        width: aCalc(14)
+        height: aCalc(14)
+        +r($sm)
+          width: 14px
+          height: 14px
+        img, svg 
+          width: 100%
+          height: 100%

@@ -1,0 +1,167 @@
+
+.fullscreen-slider
+  background-color: $White
+  position: fixed
+
+  top: 0
+  left: 0
+  //padding: 0 aCalc(140)
+  +wah(100%)
+  pointer-events: none
+  transform: translateY(100%)
+  visibility: hidden
+  z-index: -1
+  transition: transform 0.3s, visibility 0s 0.31s, z-index 0s 0.31s
+  grid-template-rows: 1fr auto
+  min-width: 0
+  +mob
+    padding: 0
+  .fullscreen-slider__slider
+    z-index: 1
+    width: 100%
+    height: 100%
+
+  .slider-pagination-navigation_static, .fullscreen-slider .slider-pagination-navigation
+    position: absolute !important
+    z-index: 100000 !important
+    width: 100% 
+    right: 0
+    left: 0 
+    margin: 0 auto
+    bottom: aCalc(40)
+
+  .slider-pagination-navigation
+    @extend .slider-pagination-navigation_static
+    .swiper-pagination 
+      margin: 0
+      padding: aCalc(11) aCalc(12)
+      border-radius: aCalc(24)
+      background: rgba(0, 0, 0, 0.20)
+      backdrop-filter: blur(18px)
+      gap: aCalc(4)
+      .swiper-pagination-bullet
+        border-radius: aCalc(6)
+        background-color: $White
+        opacity: 1
+        margin: 0
+        flex-shrink: 0
+      .swiper-pagination-bullet.swiper-pagination-bullet-active
+        width: aCalc(24)
+        background-color: $White
+        flex-shrink: 0
+        +r($sm)
+          width: 24px
+          height: 6px
+          border-radius: 6px
+          border-color: $SyntheticPumpkin
+    .slider-navigation-prev, .slider-navigation-next
+      position: fixed
+      top: 50%
+      left: aCalc(24)
+      z-index: 1
+      transform: translateY(-50%)
+      background-color: transparent
+      svg, img 
+        width: aCalc(16)
+        height: aCalc(16)
+    .slider-navigation-next
+      right: aCalc(24)
+      left: unset !important
+  .fullscreen-slider__wrapper
+    width: 100%
+    height: 100%
+  .fullscreen-slider__slide
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0 aCalc(142)
+    +r($sm)
+      padding: 0
+    .swiper-zoom-container
+      min-height: 20%
+      height: 100%
+    img
+      //width: 100%
+      width: auto
+      height: auto
+      max-height: 100%
+      min-height: 20%
+      object-fit: cover
+
+  .fullscreen-slider__slide:not([style*='url'])
+    &:before
+      +mob
+        display: none
+
+  .fullscreen-slider__close
+    @extend .cls-btn-rotate
+    background-color: transparent
+    +aProp(border-radius, 12)
+    position: absolute
+    top: aCalc(20)
+    right: aCalc(20)
+    display: flex
+    justify-content: center
+    align-items: center
+    width: aCalc(24)
+    height: aCalc(24)
+
+    z-index: 2
+    cursor: pointer
+    +mob
+      padding: 0
+      border-radius: 12px
+      margin-right: 8px
+      margin-top: 8px
+      width: 24px 
+      height: 24px
+
+    svg
+      width: 100%
+      height: 100%
+      path: 
+        fill: $BaseBlack
+        stroke: $BaseBlack
+  &._active
+    visibility: visible
+    transition: transform 0.3s, visibility 0s 0s, z-index 0s 0s
+    transform: none
+    pointer-events: all
+    z-index: map-get($zindex, modal) + 1
+
+
+.fullscreen-slider
+  .slider-pagination-navigation
+    .thumbnail-pagination
+      display: none 
+      +r($sm)
+        display: flex
+        overflow-x: auto
+        scrollbar-width: none
+        -ms-overflow-style: none
+        gap: 4px
+        padding: 10px 0
+        max-width: 100vw
+        margin: 0 auto
+        
+        &::-webkit-scrollbar
+          display: none
+        
+        .thumbnail-bullet
+          width: 56px
+          height: 56px
+          border-radius: 4px
+          overflow: hidden
+          cursor: pointer
+          transition: border-color 0.3s ease, opacity 0.3s ease
+          flex-shrink: 0
+          border: 2px solid transparent 
+          opacity: 0.6
+          &.thumbnail-bullet-active
+            opacity: 1
+            border: 2px solid #FF783D
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover

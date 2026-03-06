@@ -1,0 +1,273 @@
+
+
+.page-house
+  display: flex
+  position: relative
+  justify-content: space-between
+  gap: aCalc(20)
+  &._developers 
+    +r($sm)
+      flex-direction: column
+      gap: 0
+  &__content 
+    width: aCalc(1088)
+    +r($sm)
+      width: unset
+    h1, .h1
+      margin-bottom: aCalc(40)
+      color: $RhinocerosBeetle
+      +r($sm)
+        margin-bottom: 24px
+  &__fixed 
+    height: auto
+    .house-preview
+      margin-bottom: 0
+      position: sticky
+      top: aCalc(84)
+      +r($sm)
+        display: none
+
+.house-preview 
+  display: flex
+  justify-content: space-between
+  gap: aCalc(20)
+  margin-bottom: aCalc(80)
+  +r($sm)
+    gap: 18px
+    flex-direction: column
+    margin-bottom: 64px
+  &__content 
+    @extend .swiper !optional
+    +r($sm)
+      overflow: visible
+      margin: 0 -12px
+      position: relative
+    .slider-pagination
+      display: none
+      +r($sm)
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 4px
+        padding: 11px 12px
+        border-bottom: 1px solid $CrystalBell
+      .swiper-pagination-bullet
+        margin: 0
+        width: 4px 
+        height: 4px 
+        border-radius: 6px
+        background-color: $CerebralGrey
+        &.swiper-pagination-bullet-active
+          background-color: $SyntheticPumpkin
+          width: 24px
+    &-item 
+      @extend .swiper-slide !optional
+    &-main
+      @extend .swiper-wrapper !optional
+      height: aCalc(700)
+      width: aCalc(1088)
+      border-radius: aCalc(6)
+      overflow: hidden
+      +r($sm)
+        width: 100vw
+        height: 271px
+        overflow: unset
+      img 
+        width: 100% 
+        height: 100%
+        object-fit: contain
+
+      img.img-main 
+        transition: opacity .3s
+        opacity: 0
+        &._active 
+          opacity: 1
+      span[data-fs-full], img:not(.img-main)
+        display: none
+      img:not(.img-main)
+        +r($sm)
+          display: block
+    &-preview
+      margin-top: aCalc(8)
+      display: flex
+      gap: aCalc(4)
+      +r($sm)
+        display: none
+      span 
+        cursor: pointer
+        width: aCalc(61)
+        height: aCalc(61)
+        border-radius: aCalc(6)
+        overflow: hidden
+        transition: opacity .3s, border-color .3s
+        border: aCalc(2) solid transparent
+        border-radius: aCalc(4)
+        opacity: 0.6
+        &:hover 
+          +dsk
+            border: aCalc(2) solid $SyntheticPumpkin
+            opacity: 1
+        &._active
+          border: aCalc(2) solid $SyntheticPumpkin
+          opacity: 1
+        img 
+          width: 100% 
+          height: 100%
+          object-fit: cover
+  &__info 
+    position: sticky
+    top: aCalc(24)
+    width: aCalc(455)
+    flex-shrink: 0
+    display: flex
+    flex-direction: column
+    gap: aCalc(16)
+    +r($sm)
+      width: unset
+      gap: 12px
+    &._onlyMob
+      display: none
+      +r($sm)
+        display: flex
+    &-title 
+      display: flex
+      justify-content: space-between
+      position: relative
+      .copy
+        position: absolute
+        z-index: 1
+        bottom: aCalc(-12)
+        right: 0
+        .h3 
+          color: $White
+      .text-xlBold 
+        color: $RhinocerosBeetle
+      img, svg 
+        width: aCalc(20)
+        height: aCalc(20)
+        +r($sm)
+          width: 17px
+          height: 17px
+      .share-dsk, .share-mob 
+        cursor: pointer
+    &-review 
+      display: flex
+      justify-content: space-between
+      padding-bottom: aCalc(8)
+      border-bottom: 1px solid $CrystalBell
+      +r($sm)
+        padding-bottom: 8px
+      .review-title 
+        display: flex
+        align-items: center
+        gap: aCalc(6) 
+        +r($sm)
+          gap: 6px
+        svg, img 
+          width: aCalc(24)
+          height: aCalc(24)
+          +r($sm)
+            width: 24px
+            height: 24px
+        .caps-m 
+          transition: color .3s
+        &:hover 
+          .caps-m 
+            +dsk
+              color: $RhinocerosBeetle
+      .review-block 
+        gap: aCalc(3)
+        display: flex
+        align-items: center
+        +r($sm)
+          gap: 3px
+        &__icon 
+          display: flex
+          align-items: center
+          gap: aCalc(3)
+          +r($sm)
+            gap: 3px
+          &:first-child
+            margin-right: 5px
+          svg, img 
+            width: aCalc(16)
+            height: aCalc(16)
+            +r($sm)
+              width: 16px
+              height: 16px
+    &-features 
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      gap: aCalc(8)
+      padding-bottom: aCalc(16)
+      border-bottom: 1px solid $CrystalBell
+      +r($sm)
+        gap: 8px
+        padding-bottom: 16px
+    &-feature 
+      display: flex
+      justify-content: space-between
+      align-items: center
+    &-plan 
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .plan-info 
+        display: flex
+        flex-direction: column
+        gap: aCalc(44)
+        justify-content: space-between
+        +r($sm)
+          gap: 47px
+        a.button-s._viceversa
+          color: $BaseBlack
+          padding-bottom: aCalc(2)
+          text-transform: uppercase
+          +r($sm)
+            padding-bottom: 0
+          &::after 
+            background: $BaseBlack
+          &::before 
+            background: $BaseBlack
+      .plan-content 
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: aCalc(8)
+        +r($sm)
+          gap: 8px
+        &__img 
+          position: relative
+          width: aCalc(80)
+          height: aCalc(80)
+          +r($sm)
+            width: 80px
+            height: 80px
+          &-label 
+            position: absolute
+            z-index: 1
+            padding: aCalc(4) aCalc(5)
+            left: aCalc(4)
+            background: rgba(0, 0, 0, 0.40)
+            backdrop-filter: blur(18px)
+            top: aCalc(4)
+            border-radius: aCalc(3)
+            text-transform: uppercase
+            color: $White 
+            font-size: aCalc(9)
+            font-style: normal
+            font-weight: 700
+            line-height: 100% 
+            +r($sm)
+              font-size: 9px
+              padding: 4px 5px
+              border-radius: 3px
+              left: 4px 
+              top: 4px
+          img 
+            width: 100% 
+            height: 100%
+            object-fit: cover
+
+      

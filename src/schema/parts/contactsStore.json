@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "OnlineStore",
+
+  "image": "url",
+
+  "logo": " url",
+  "url": "https://dobuy.ru/",
+  "sameAs": ["ссылка на телеграмм канал", "ссылка на ютуб", "ссылка на вк"],
+  "name": "DoBuy",
+  "description": "Описание",
+  "email": "info@netlab.pro",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@dobuy.ru",
+    "sameAs": ["https://t.me/DoBuystore_bot", "https://wa.me/79937653121/"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Laniakea LLC, Mezzanine Floor, Dynamic Business Center, Office #08. Abdulla KamberBusiness Center building, PO Box",
+    "addressLocality": "Hor Al Anz",
+    "addressCountry": "UAE",
+    "addressRegion": "Dubai",
+    "postalCode": "77106"
+  },
+
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingCount": 20,
+    "ratingValue": 4.7
+  }
+}

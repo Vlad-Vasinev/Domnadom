@@ -1,0 +1,382 @@
+html
+  box-sizing: border-box
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+  outline: none
+
+html
+  //height: 100%
+  //height: -webkit-fill-available
+  height: auto
+  +r($sm)
+    height: 100%
+
+:root
+  --swiper-theme-color: unset
+  color: #000
+
+body,
+html
+  background-color: #fff
+  font-family: $baseFont
+  font-display: swap
+  --fixedColor: #ffffff
+  --fixedTextColor: #ffffff
+  font-size: 16px
+  min-width: 320px
+  max-width: 100%
+  position: relative
+  margin: 0
+
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+body
+  min-height: 100vh
+  min-height: 100dvh
+  min-height: -webkit-fill-available
+  // height: var(--app-height)
+  overflow-x: hidden
+  +r($sm)
+    height: var(--app-height)
+
+// МАССИВ z-index-ов 
+$zindex: ( "modal": 200, "overlay": 190, "dropdown": 110, "header": 100, "footer": 90 )
+a[href] object
+  cursor: pointer
+  svg
+    cursor: pointer
+
+hr
+  margin: 0
+  border-top: 0
+  border-width: 1px
+  border-color: $WhiteGray
+  
+
+.page
+  min-height: calc(100vh - var(--header-height))
+  width: 100%
+  -webkit-text-size-adjust: 100%
+  display: flex
+  flex-direction: column
+  transition: transform 0.4s ease-in-out
+  position: relative
+  +mob
+    overflow: hidden
+    min-height: calc(100vh - var(--header-height) - var(--mobile-logo-height) )
+
+section 
+  margin-bottom: aCalc(40)
+  +r($sm)
+    margin-bottom: 60px
+  &._noMargin 
+    margin: 0
+  &._noMarginMob
+    +r($sm)
+      margin: 0
+  .n-h2.section-title
+    margin: 0 0 aCalc(40) aCalc(40)
+    width: unset
+    +r($sm)
+      margin: 0 0 24px 12px
+      width: unset
+  &.page__block 
+    .n-h2.section-title
+      margin: 0 aCalc(40) aCalc(40) 0
+      +r($sm)
+        margin: 0 0 24px 0
+        width: unset
+  &.page__block_full-w-mob
+    .n-h2.section-title
+      width: unset
+      +r($sm)
+        margin: 0 0 24px 12px
+        width: unset
+
+.page__body
+  margin: 0
+  min-width: 320px
+  min-height: 100%
+  font-size: 16px
+
+video
+  border: none 
+  outline: none
+  border-color: transparent
+  outline-color: transparent
+  &:focus
+    outline: none
+img
+  height: auto
+  max-width: 100%
+  object-fit: cover
+  display: block
+
+svg
+  display: block
+
+a
+  text-decoration: none
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    margin: 0
+    display: block
+.is-hidden
+  display: none !important
+
+.btn-reset
+  border: none
+  padding: 0
+  background-color: transparent
+  cursor: pointer
+
+.list-reset
+  list-style: none
+  margin: 0
+  padding: 0
+
+button
+  padding: 0
+  border: none
+  font: inherit
+  color: inherit
+  background-color: transparent
+  cursor: pointer
+
+input
+  -webkit-appearance: none
+  appearance: none
+  border: none
+  border-radius: 0
+  background-color: #fff
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration
+    display: none
+
+textarea
+  border: none
+  overflow: auto
+  outline: none
+
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
+
+  resize: none
+
+.visually-hidden
+  position: absolute
+  overflow: hidden
+  margin: -1px
+  border: 0
+  padding: 0
+  width: 1px
+  height: 1px
+  clip: rect(0 0 0 0)
+
+.display-none
+  display: none !important
+
+.loading-icon-bg
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%232E5E5E' stroke-dasharray='31.41592653589793 31.41592653589793' stroke-linecap='round' stroke-width='2'%3E%3CanimateTransform attributeName='transform' dur='2.8571428571428568s' keyTimes='0;1' repeatCount='indefinite' type='rotate' values='0 50 50;360 50 50' /%3E%3C/circle%3E%3C/svg%3E")
+  background-repeat: no-repeat
+  background-size: 10%
+  background-position: center
+
+.container
+  margin: 0 auto
+  padding: 0 var(--container-offset)
+  max-width: var(--container-width)
+
+.js-focus-visible :focus:not(.focus-visible)
+  outline: none
+
+._mob
+  +dsk
+    display: none !important
+._dsk
+  +mob
+    display: none !important
+
+br.mob-br, br[mob-br]
+  +dsk
+    display: none
+
+br.data-dsk-br, br[data-dsk-br]
+  +mob
+    display: none
+
+.centered
+  text-align: center
+
+.scroll-marker 
+  position: absolute
+  top: 0
+  height: aCalc(70)
+
+.dis-scroll
+  position: fixed
+  left: 0
+  top: 0
+  overflow: hidden
+  width: 100%
+  height: 100%
+  //height: unset
+  overscroll-behavior: none
+
+  .page--ios &
+    position: relative
+
+.answers
+  z-index: 1 !important
+
+#captcha ~ div[style*="transition: visibility 0s"] > div:not([style*="width: 100%;"])
+  position: fixed !important
+  +mob
+    top: 0 !important
+  +dsk
+    top: 25vh !important
+
+.text p
+  font-size: aCalc(24)
+  line-height: aCalc(32)
+  +r($sm)
+    font-size: 16px
+    line-height: 22px
+
+.nbl-allProjects 
+  padding: aCalc(30) 0
+  border-bottom: 1px solid #F1F1F1
+  border-top: 1px solid #F1F1F1
+  margin-bottom: aCalc(180)
+  .n-button-green._white
+    border: none
+    margin: 0 auto
+    padding: 0
+  +r($sm)
+    display: none
+  &._mobile 
+    display: none 
+    padding: 20px 12px
+    align-items: center
+    border-top: 1px solid #F1F1F1
+    margin-bottom: 60px
+    +r($sm)
+      display: flex
+      justify-content: space-between
+    .n-button-green._white
+      margin: 0
+
+.n-logo 
+  svg, img 
+    width: aCalc(255)
+    height: aCalc(28)
+    transition: all .3s
+    +r($sm)
+      width: 204px
+      height: 22px
+  &._color  
+    svg 
+      display: none
+
+.plain-grid
+  display: flex
+  justify-content: space-between
+  +r($sm)
+    flex-direction: column
+    gap: aCalc(40)
+  .n-h2.section-title
+    width: aCalc(393)
+    +r($sm)
+      width: unset
+
+.plain-gridList
+  display: grid 
+  grid-template-columns: repeat(3, aCalc(428))
+  gap: aCalc(20)
+  +r($sm)
+    gap: unset
+    display: flex
+  &__item 
+    background-color: #F6F6F6
+    padding: aCalc(20)
+    min-height: aCalc(240)
+    +r($sm)
+      min-height: 200px
+      padding: 16px
+
+.search-page-form
+  display: flex
+  align-items: center
+  gap: aCalc(40)
+  +r($sm)
+    flex-direction: column
+    gap: 12px
+    padding: 0 12px
+    align-items: flex-start
+  input
+    border: 1px solid #000000
+    border-radius: aCalc(6)
+    font-weight: 500
+    color: #0b0b0b
+    text-transform: uppercase
+    cursor: pointer
+    font-size: aCalc(14)
+    height: aCalc(48)
+    +r($sm)
+      height: 48px
+      font-size: 24px
+      border-radius: 4px
+    &::placeholder
+      font-weight: 500
+      color: #0b0b0b
+      text-transform: uppercase
+      cursor: pointer
+      font-size: aCalc(14)
+      +r($sm)
+        font-size: aCalc(14)
+
+.page__container._error 
+  display: grid
+  justify-content: center
+  align-items: center
+  height: 100vh
+  +r($sm)
+    height: 42vh
+  .page__block.page__block_header-offset.page__block_article
+    border-bottom: none
+    .h3 
+      margin-top: aCalc(24)
+      +r($sm)
+        margin-top: 16px
+
+.d-mainTitle 
+  margin-bottom: aCalc(40)
+  color: $RhinocerosBeetle
+  +r($sm)
+    margin-bottom: 24px
+
+[data-aos]
+  +r($sm)
+    transform: unset
+    transition: unset
+    opacity: 1 !important
+    transition-timing-function: unset
+
+.smart-captcha
+  display: none
+  margin-bottom: aCalc(20)
+  +r($sm)
+    margin-bottom: 26px
+  &._active 
+    display: none

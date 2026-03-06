@@ -1,0 +1,19 @@
+
+.plan-page 
+  text-align: center
+  +r($sm)
+    text-align: left
+  h1 
+    color: $RhinocerosBeetle
+    margin-bottom: aCalc(24) !important
+    +r($sm)
+      margin-bottom: 24px !important
+  h1, h2, div 
+    width: aCalc(920)
+    margin: 0 auto
+    +r($sm) 
+      width: unset
+  h2
+    @extend .text-xl
+    font-weight: 400 !important
+    letter-spacing: unset

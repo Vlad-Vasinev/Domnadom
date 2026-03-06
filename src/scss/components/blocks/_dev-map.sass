@@ -1,0 +1,39 @@
+.dev-map.map-block
+  position: relative
+  margin-top: aCalc(180)
+  +r($sm)
+    margin-top: 60px
+    height: 500px !important
+  .dev-map__info
+    position: absolute
+    text-align: center
+    content: ""
+    width: 100%
+    z-index: 10
+    top: 0
+    left: 0
+    min-height: aCalc(293)
+    padding: aCalc(60)
+    background: linear-gradient(180deg, #CFE6C7 50.18%, rgba(207, 230, 199, 0) 100%)
+    +r($sm)
+      padding: 40px 16px
+    .h2, .h4 
+      max-width: aCalc(634)
+      margin: 0 auto
+      +r($sm)
+        max-width: unset
+    .h2 
+      margin-bottom: aCalc(16)
+      +r($sm)
+        margin-bottom: 16px
+  .ymaps-2-1-79-controls__control
+    display: none
+  .button_medium.slide-button.slide-button_white
+    position: absolute
+    bottom: aCalc(60)
+    left: 0
+    right: 0
+    margin: 0 auto
+    z-index: 10
+    +r($sm)
+      bottom: 60px

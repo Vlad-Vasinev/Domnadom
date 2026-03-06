@@ -1,0 +1,40 @@
+[data-lazy], [data-lazy-slide]
+  overflow: hidden
+  position: relative
+  &:not(.is-loaded)
+    img, video
+      filter: blur(5px)
+      border-radius: inherit
+  &.is-loaded
+    &::before
+      visibility: hidden
+      animation-play-state: paused
+    &::after
+      visibility: hidden
+
+  &::before
+    display: block
+    content: ''
+    position: absolute
+    width: 30%
+    height: 100%
+    
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%)
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0) 100%)
+    background-repeat: no-repeat
+    right: 100%
+    top: 0
+    z-index: 1
+    border-radius: inherit  
+    animation: 3s ease infinite
+    animation-name: running-gradient
+    opacity: 0.4
+    transition: opacity 0.2s, visibility 0s 0.31s
+    
+  @keyframes running-gradient
+    0%
+    
+      transform: translateX(0)
+    100%
+      transform: translateX(440%)

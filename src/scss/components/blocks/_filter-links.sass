@@ -1,0 +1,154 @@
+
+.filter-links 
+  display: flex
+  align-items: center 
+  justify-content: center
+  gap: aCalc(4)
+  margin-bottom: aCalc(40)
+  +r($sm)
+    gap: 4px
+    overflow-x: auto
+    overflow-y: hidden
+    margin: 0 -12px
+    padding: 0 12px 24px
+    height: 65px
+    justify-content: flex-start
+  &._left 
+    justify-content: flex-start
+  li 
+    flex-shrink: 0
+  a.button-s 
+    display: block
+  a, button, .button-s
+    padding: aCalc(10) aCalc(16)
+    background-color: transparent 
+    transition: background-color .3s, color .3s
+    border-radius: aCalc(40)
+    cursor: pointer
+    &._active 
+      background-color: $RhinocerosBeetle
+      color: $White
+    +r($sm)
+      padding: 10px 16px
+      border-radius: 40px
+    &:hover 
+      +dsk
+        background-color: $SuperSilver
+        color: $BaseBlack
+  .button-s._filter 
+    position: relative
+    cursor: pointer
+
+  .filter-popup 
+    padding: aCalc(12) 0
+    top: calc(100% + aCalc(12))
+    left: 0
+    bottom: aCalc(-12)
+    flex-direction: column
+    position: absolute
+    border-radius: aCalc(12)
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08)
+    border: 1px solid $CrystalBell
+    width: aCalc(300)
+    height: aCalc(384)
+    overflow-y: auto
+    z-index: 2
+    opacity: 0
+    visibility: hidden
+    background-color: $White
+    transition: opacity 0.2s, visibility 0s 0.41s, transform 0.4s
+    transform: translate(0%, 25%)
+    +r($sm)
+      top: 0
+      position: fixed
+      box-shadow: unset
+      border: unset
+      border-radius: 0
+      transform: translate(100%, 0%)
+      width: 100vw
+      height: var(--app-height)
+      visibility: unset 
+      opacity: unset
+      padding: 0
+      padding-top: 66px
+      padding-bottom: 24px
+    &._active 
+      opacity: 1
+      z-index: 10
+      visibility: visible
+      transform: translate(0%, 0%)
+      transition: transform 0.4s, visibility 0s 0s, opacity 0.2s
+    &__header 
+      position: fixed
+      z-index: 11
+      transform: translate(100%, 0%)
+      display: flex
+      top: 0
+      left: 0
+      width: 100vw
+      background-color: $White
+      justify-content: space-between
+      align-items: center
+      padding: 8px 12px 
+      transition: transform 0.4s
+      border-bottom: 1px solid $CrystalBell
+      &._active
+        +r($sm)
+          transform: translate(0%, 0%)
+          transition: transform 0.4s
+    &__item 
+      padding: aCalc(6) aCalc(12)
+      display: flex
+      align-items: center
+      gap: aCalc(6)
+      background-color: $White
+      transition: background-color .3s
+      position: relative
+      +r($sm)
+        gap: 6px
+        padding: 6px 12px
+      .caps-m
+        color: $BaseBlack
+      &:hover 
+        +dsk
+          background-color: $PicoIvory
+        .filter-popup__item-close
+          +dsk
+            opacity: 1
+      &._active 
+        background-color: $PicoIvory
+        .filter-popup__item-close
+          opacity: 1
+      svg, img 
+        width: aCalc(24)
+        height: aCalc(24)
+        object-fit: cover
+        +r($sm)
+          width: 24px
+          height: 24px
+      &-close 
+        position: absolute
+        width: aCalc(20)
+        height: aCalc(20)
+        top: aCalc(8)
+        right: aCalc(12)
+        display: grid 
+        justify-content: center
+        align-items: center
+        background-color: $DownHome
+        border-radius: aCalc(24)
+        opacity: 0
+        transition: opacity .3s
+        +r($sm)
+          width: 20px
+          height: 20px
+          top: 8px 
+          border-radius: 24px
+          right: 12px
+        svg, img 
+          width: aCalc(7)
+          height: aCalc(7)
+          object-fit: cover
+          +r($sm)
+            width: 7px
+            height: 7px

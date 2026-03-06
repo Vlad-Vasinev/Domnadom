@@ -1,0 +1,129 @@
+
+<template id="consult-form">
+  <div class="popup _catalog-popup" data-lenis-prevent>
+    <div class="popup__close">
+      <div class="popup__close-svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9991 13.0607L5.52941 19.5303L4.46875 18.4697L10.9384 12L4.46875 5.53033L5.52941 4.46967L11.9991 10.9393L18.4688 4.46967L19.5294 5.53033L13.0597 12L19.5294 18.4697L18.4688 19.5303L11.9991 13.0607Z" fill="#0D0D0D"/>
+        </svg>
+      </div>
+    </div>
+    <div class="popup__body">
+      .catalog-form
+        form.form(data-action="/api/consult-form" data-thanks-url="/thanks.html")
+          .text-xlBold Project consultation
+          .text-l
+            |Submit a request, and a Terem specialist will consult you on everything from installment plans to construction timelines.
+          <div id="smartcaptcha" class="smart-captcha"></div>
+          <div class="form__block">
+            <input type="text" required placeholder="" name="name" />
+            <label class="text-label"> your name *</label>
+          </div>
+          <div class="form__block">
+            <input type="text" required placeholder="" name="phone" />
+            <label class="text-label">phone</label>
+          </div>
+          <div class="form__block _checkbox">
+            <label>
+              <input type="checkbox" placeholder="" name="permission" />
+              <span></span>
+              .text-s I agree to the Personal Data Processing Policy and the processing of personal data
+            </label>
+          </div>
+          button.button-m.primary-btn(type="submit") Send
+    </div>
+  </div>
+</template>
+
+<template id="header-mob">
+  <div class="popup _header-mob">
+    <div class="popup__close">
+      <div class="popup__close-svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9991 13.0607L5.52941 19.5303L4.46875 18.4697L10.9384 12L4.46875 5.53033L5.52941 4.46967L11.9991 10.9393L18.4688 4.46967L19.5294 5.53033L13.0597 12L19.5294 18.4697L18.4688 19.5303L11.9991 13.0607Z" fill="#0D0D0D"/>
+        </svg>
+      </div>
+    </div>
+    <div class="popup__body">
+      .menu-mobile
+        ul.menu-mobile__list 
+          li
+            a.text-xlBold(href="#") House designs
+          li
+            a.text-xlBold(href="#") Manufacturers
+          li
+            a.text-xlBold(href="#") Exhibition plan
+          li
+            a.text-xlBold(href="#") For tenants
+          li
+            a.text-xlBold(href="#") About the exhibition
+          li
+            a.text-xlBold(href="#") News
+          li
+            a.text-xlBold(href="#") Contacts
+        .menu-mobile__user 
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+            <g clip-path="url(#clip0_473_368)">
+              <path d="M24.9053 18.1758L21.1838 8.78576L18.0457 14.2758L14.9077 8.78576L11.1862 18.1788H10.1107V19.5903H15.7147V18.1788H14.8853L15.6923 15.8463L18.0457 19.7013L20.3993 15.8463L21.2062 18.1788H20.3767V19.5903H26.0032V18.1788L24.9053 18.1758ZM32.9077 15.3078C32.9087 13.3499 32.5238 11.411 31.775 9.60193C31.0262 7.79289 29.9282 6.14916 28.5438 4.76472C27.1593 3.38028 25.5156 2.28228 23.7066 1.53348C21.8975 0.784681 19.9586 0.399773 18.0007 0.400759C9.77475 0.400759 3.09375 7.08026 3.09375 15.3078C3.09375 19.4328 4.77525 23.1528 7.46475 25.8423C7.63317 26.0122 7.84831 26.1281 8.08281 26.1754C8.31732 26.2227 8.5606 26.1992 8.7817 26.1079C9.00281 26.0165 9.19175 25.8615 9.32451 25.6625C9.45727 25.4635 9.52784 25.2295 9.52725 24.9903C9.52776 24.6633 9.39888 24.3495 9.16875 24.1173C6.83892 21.778 5.53326 18.6093 5.53875 15.3078C5.53875 8.42576 11.1187 2.82176 18.0007 2.82176C24.8827 2.82176 30.4867 8.42576 30.4867 15.3078C30.4904 16.9482 30.1695 18.5731 29.5423 20.0889C28.9152 21.6047 27.9943 22.9814 26.8328 24.1398L16.2968 34.6743L18.0007 36.4008L28.5592 25.8423C29.9427 24.4596 31.0391 22.8171 31.7854 21.0092C32.5316 19.2013 32.9131 17.2636 32.9077 15.3078Z" fill="#2D9126"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_473_368">
+                <rect width="36" height="36" fill="white" transform="translate(0 0.400757)"/>
+              </clipPath>
+            </defs>
+          </svg>
+          .text-xxlBold  
+            |Domodedovskaya <br/>
+            |Kashirskoe shosse, 63k1
+          .text-l._text
+            |3 minutes from the metro <br/>
+            |Open seven days a week from 10:00 a.m. to 7:00 p.m.
+          a.text-s._phone(href="tel:+74993944907") +7 (499) 394-49-07
+    </div>
+  </div>
+</template>
+
+<template id="layer-mob">
+  <div class="popup _layer-mob">
+    <div class="popup__body">
+      <div class="popup__close">
+        <div class="popup__close-svg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9991 13.0607L5.52941 19.5303L4.46875 18.4697L10.9384 12L4.46875 5.53033L5.52941 4.46967L11.9991 10.9393L18.4688 4.46967L19.5294 5.53033L13.0597 12L19.5294 18.4697L18.4688 19.5303L11.9991 13.0607Z" fill="#0D0D0D"/>
+          </svg>
+        </div>
+      </div>
+      a.small-card(href="https://www.apple.com/")
+        .small-card__content
+          img(src="/img/dom/map/map-preview.jpg" alt="")
+        .small-card__info 
+          .small-card__titles 
+            .text-lBold._title Courchevel
+            .text-lBold._size 256 m²
+          .small-card__description 
+            .title 
+              .icon
+                //- img(src="" alt="")
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect width="24" height="24" rx="12" fill="#49CF61"></rect>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3778 17V13.8569H12.4461C15.8322 13.8569 17 12.1257 17 10.4429C17 8.79884 16.0948 7 12.4461 7H8V17H10.3778ZM12.507 9.06964C14.0078 9.06964 14.5284 9.64019 14.5284 10.4284C14.5284 11.2698 13.8999 11.7872 12.4132 11.7872H10.3731V9.07446H12.507V9.06964Z" fill="white"></path>
+                </svg>
+              .caps-m RUSS-HOUSE
+            .star 
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M7.29097 1.42802C7.5812 0.857327 8.4188 0.857326 8.70903 1.42802L10.2598 4.4775C10.375 4.70396 10.5974 4.86096 10.8546 4.89746L14.3225 5.38946C14.9712 5.48149 15.2297 6.25638 14.7598 6.70059L12.2527 9.07074C12.0659 9.24732 11.9807 9.50197 12.0248 9.75153L12.6164 13.0998C12.7273 13.7275 12.0494 14.2063 11.4692 13.9101L8.36781 12.3271C8.13752 12.2095 7.86248 12.2095 7.63219 12.3271L4.53084 13.9101C3.95059 14.2063 3.27266 13.7275 3.38357 13.0998L3.97523 9.75153C4.01933 9.50197 3.93406 9.24732 3.74728 9.07074L1.24021 6.70059C0.770342 6.25638 1.02876 5.48149 1.67746 5.38946L5.14539 4.89746C5.40264 4.86096 5.62499 4.70396 5.74016 4.4775L7.29097 1.42802Z" fill="#F09F32"/>
+              </svg>
+              .text-s 5.0
+            .review
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.27012 14.1333C4.78173 13.9477 5.21794 13.7075 5.56155 13.4823C6.31514 13.7742 7.13857 13.9348 8 13.9348C11.5898 13.9348 14.5 11.1512 14.5 7.7174C14.5 4.28363 11.5898 1.5 8 1.5C4.41017 1.5 1.5 4.28363 1.5 7.7174C1.5 9.00542 1.91009 10.2034 2.61215 11.1964C2.6567 12.0174 2.2059 12.7593 1.73802 13.4157C1.32822 13.9906 1.43104 14.4539 2.19515 14.4953C2.53764 14.5139 3.27846 14.4929 4.27012 14.1333Z" fill="#B3B3B3"/>
+              </svg>
+              p.text-s 68
+              span.text-s reviews
+    </div>
+  </div>
+</template>
+
+<div id="modal-popup" class="popup-wrapper">
+  <div class="modal-bg"></div>
+</div>

@@ -1,0 +1,5 @@
+- var breadcrumbText = breadcrumbText || ["Main", "Blog"]
+ul.breadcrumbs._absolute
+  each text in breadcrumbText
+    li
+      a.text-s(href='#')=text

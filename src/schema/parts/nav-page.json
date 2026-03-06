@@ -1,0 +1,30 @@
+{
+  "@context": "http://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "SiteNavigationElement",
+      "position": 1,
+      "name": "Информация",
+      "url": "https://www.blackbeltwhitehat.com#якорь"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 2,
+      "name": " Комплектации",
+      "url": "https://www.blackbeltwhitehat.com#якорь"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 3,
+      "name": " Планировка",
+      "url": "https://www.blackbeltwhitehat.com#якорь"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 4,
+      "name": " Визуализации проекта",
+      "url": "https://www.blackbeltwhitehat.com#якорь"
+    }
+  ]
+}

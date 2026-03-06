@@ -1,0 +1,19 @@
+node_modules/
+# /app
+
+# ---
+# src/img/**/*.png, *.jpeg
+# src/img/**/*.jpeg
+# src/img/**/*.webp
+# ---
+package-lock.json
+*.code-workspace
+# *.webm
+# *.mp4
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+*.js.map
+*.local.*
+.idea/

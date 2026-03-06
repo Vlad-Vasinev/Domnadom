@@ -1,0 +1,79 @@
+
+.news 
+  display: flex
+  flex-direction: column
+  gap: aCalc(20)
+  +r($sm)
+    gap: 40px
+  &__item 
+    padding-bottom: aCalc(20)
+    border-bottom: 1px solid $CrystalBell
+    display: flex
+    +r($sm)
+      flex-direction: column
+      padding-bottom: 0
+      border-bottom: none 
+    &:hover 
+      .news__img 
+        img 
+          +dsk
+            transform: scale(1.05)  
+      .news__text
+        .text-l 
+          +dsk
+            color: $SyntheticPumpkin
+  &__date 
+    flex-shrink: 0
+    width: aCalc(296)
+    +r($sm) 
+      margin-bottom: 8px
+      order: 2
+      width: unset
+    .text-l 
+      color: $NamaraGrey
+  &__content 
+    display: flex
+    gap: aCalc(20)
+    +r($sm)
+      flex-direction: column
+  &__text 
+    margin-left: aCalc(20)
+    width: aCalc(772)
+    display: flex
+    flex-direction: column
+    gap: aCalc(12)
+    +r($sm)
+      margin-left: 0
+      order: 3
+      width: unset
+    .text-l 
+      transition: color .3s
+      +r($sm)
+        margin-bottom: 8px
+    .text-m 
+      +r($sm)
+        overflow: hidden !important
+        -o-text-overflow: ellipsis !important
+        text-overflow: ellipsis !important
+        display: -webkit-box !important
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+  &__img 
+    margin-left: aCalc(20)
+    flex-shrink: 0
+    border-radius: aCalc(6)
+    overflow: hidden
+    width: aCalc(297)
+    height: aCalc(186)
+    +r($sm)
+      margin-left: 0
+      margin-bottom: 12px
+      order: 0
+      border-radius: 6px
+      width: 100%
+      height: 220px
+    img, video 
+      transition: transform .3s
+      width: 100%
+      height: 100%
+      object-fit: cover

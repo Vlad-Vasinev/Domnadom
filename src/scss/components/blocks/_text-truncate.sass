@@ -1,0 +1,36 @@
+
+.text-truncate
+  margin-bottom: aCalc(80)
+  +r($sm)
+    margin-bottom: 64px
+  &__wrapper
+    display: flex
+    flex-direction: column
+    gap: aCalc(24)
+    width: aCalc(1088)
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+    overflow: hidden
+    +r($sm)
+      gap: 12px
+      width: unset
+    p
+      @extend .text-l
+      margin: 0 
+  &__btn
+    margin-top: aCalc(24)
+    padding: 0
+    background-color: transparent
+    border: none
+    cursor: pointer
+    display: flex
+    align-items: center
+    gap: aCalc(8)
+    +r($sm)
+      margin-top: 24px
+    .btn-accent
+      color: $SyntheticPumpkin !important
+    svg
+      transition: transform 0.3s ease
+      transform: rotate(90deg)
+      &._active
+        transform: rotate(270deg)

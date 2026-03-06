@@ -1,0 +1,23 @@
+include ./utilities/_mixins
+doctype html
+html(lang="en")
+  head()
+    include ./shared/_head
+    // предзагружаем главное изображение на странице
+    <link rel="preload" as="image" media="(max-width:767px)" href="img/content/hb/00mp.webp"/>
+    <link rel="preload" as="image" media="(min-width:768px)" href="img/content/hb/00p.webp"/>
+  body    
+    include ./../components/newrubkoff/header/_d-header-bg
+    include ./../components/blocks/_popups
+
+    .page
+      include ../components/contacts-page/_contacts
+      include ../components/newrubkoff/blocks/_nbl-cookies
+
+      //- include ./../components/newrubkoff/footer/_d-footer
+
+    include ./../components/modals/_modals
+
+    block scripts
+      include ./shared/_scripts
+    include ./shared/_pages-list

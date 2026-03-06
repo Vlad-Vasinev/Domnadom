@@ -1,0 +1,84 @@
+
+
+.article 
+  width: aCalc(930)
+  margin: aCalc(80) auto 0
+  +r($sm)
+    width: unset
+    margin: 24px auto 0
+  h1, .h1 
+    text-align: center
+    color: $RhinocerosBeetle
+    margin-bottom: aCalc(40)
+    +r($sm)
+      margin-bottom: 24px
+      text-align: left
+    & + p
+      text-align: center
+      +r($sm)
+        text-align: left
+  h2, .h2
+    margin: aCalc(64) 0 aCalc(24)
+    +r($sm)
+      margin: 48px 0 16px
+  h3, .h3 
+    font-size: aCalc(18)
+    line-height: 130%
+    font-weight: 800
+    letter-spacing: -0.72px
+    margin-top: aCalc(40)
+    margin-bottom: aCalc(16)
+    +r($sm)
+      margin-top: 40px
+      font-size: 18px
+      margin-bottom: 16px
+  p + p
+    margin-top: aCalc(16)
+    +r($sm)
+      margin-top: 16px
+  img 
+    margin-bottom: aCalc(40)
+  img, video 
+    width: 100%
+    height: aCalc(583)
+    margin: aCalc(40) 0
+    border-radius: aCalc(6)
+    object-fit: cover
+    +r($sm)
+      border-radius: 6px
+      height: 220px
+      margin: 24px 0
+  ul 
+    margin-top: aCalc(16)
+    display: flex
+    flex-direction: column
+    gap: aCalc(16)
+    +r($sm)
+      gap: 16px
+      margin-top: 16px
+    li 
+      @extend .text-l
+      padding-left: aCalc(12)
+      +r($sm)
+        padding-left: 4px
+      span, strong
+        padding-left: aCalc(12)
+        @extend .text-l
+        font-weight: 800 !important
+        position: relative
+        +r($sm)
+          padding-left: 12px
+          display: inline-block
+        &::after 
+          position: absolute
+          content: ""
+          width: aCalc(6)
+          height: aCalc(6)
+          background-color: $BaseBlack
+          border-radius: 50%
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+          +r($sm)
+            width: 6px
+            height: 6px

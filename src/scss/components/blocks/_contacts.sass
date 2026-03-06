@@ -1,0 +1,83 @@
+
+.contacts 
+  display: flex
+  justify-content: center
+  width: 100vw
+  overflow: hidden
+  +r($sm)
+    flex-direction: column
+  &__info 
+    margin-left: aCalc(328)
+    margin-right: aCalc(331)
+    //width: aCalc(620)
+    width: 33.2916666667vw
+    flex-shrink: 0
+    +r($sm)
+      width: unset
+      margin-left: 12px
+      margin-right: 12px
+      margin-bottom: 40px
+    .text-h1.d-mainTitle
+      margin-bottom: aCalc(151)
+      +r($sm)
+        margin-bottom: 24px
+    .text-xxlBold 
+      margin-bottom: aCalc(16)
+      +r($sm)
+        margin-bottom: 12px
+    a.text-l 
+      margin-bottom: aCalc(32)
+      +r($sm)
+        margin-bottom: 24px
+    p.text-l 
+      display: flex
+      align-items: center
+      gap: aCalc(24)
+      margin-bottom: aCalc(24)
+      +r($sm)
+        margin-bottom: 20px
+      span 
+        opacity: 0.4
+  &__links 
+    display: flex
+    flex-direction: column
+    gap: aCalc(16)
+    +r($sm)
+      gap: 8px
+    a.text-l 
+      margin-bottom: 0
+  &__map 
+    height: 100vh
+    width: aCalc(950)
+    +r($sm)
+      width: unset
+      //height: 317px
+      height: 50vh
+    .map-block.map-block_on-map
+      .map-block .js-ymap
+        height: 100vh
+        +r($sm)
+          height: 317px
+  &__icon 
+    width: aCalc(64)
+    height: aCalc(64)
+    margin-bottom: aCalc(24)
+    +r($sm)
+      width: 35px
+      height: 43px
+      margin-bottom: 16px
+    svg, img 
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+.icon-marker-colorful, .ymaps3x0--marker
+  width: aCalc(86)
+  // height: aCalc(70)
+  height: auto
+  object-fit: cover
+  transform: translateY(-100%) translateX(-20%)
+  +r($sm)
+    width: 55px
+    height: 46px
+    

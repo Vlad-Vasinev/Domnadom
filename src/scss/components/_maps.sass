@@ -1,0 +1,265 @@
+.map-block
+  .js-ymap
+    @extend .loading-icon-bg
+    background-color: #f8f8f8
+    // +aProp(border-radius, 12)
+    overflow: hidden
+    width: 100%
+    height: 100vh
+    aspect-ratio: 184/70
+    // -webkit-mask-image: -webkit-radial-gradient(white, black)
+    +mob
+      // border-radius: 12px 
+      aspect-ratio: 345/300
+      background-size: 40%
+      // height: 317px
+      height: 50vh
+    > ymaps
+      border-radius: inherit
+      overflow: hidden
+      // -webkit-mask-image: -webkit-radial-gradient(white, black)
+    &.n-js-ymap
+      .ymaps-2-1-79-map-copyrights-promo, .ymaps-2-1-79-controls__control
+        display: none !important
+    // .ymaps-2-1-79-map-copyrights-promo, .ymaps-2-1-79-controls__control
+    //   display: none !important
+    [class$="controls__control"]
+      +mob
+        left: unset !important
+        right: 4px !important
+    [class$="copyrights-promo"]
+      height: auto
+      > ymaps
+        padding: 0 0 aCalc(30) aCalc(32)
+        display: flex
+        +aProp(gap, 16)
+        +mob
+          gap: 8px
+          flex-direction: column
+          align-items: flex-start
+          padding: 0 0 4px 4px
+      [class$="gotoymaps"]
+        margin: 0
+        +mob
+          order: 2
+        [class$="gotoymaps__container"] 
+          display: flex
+          height: auto
+          padding: aCalc(12) aCalc(16)
+          align-items: center
+          box-shadow: none
+          +aProp(border-radius, 12)
+          +mob
+            border-radius: 12px
+            padding: 6px 6px
+        [class$="gotoymaps__pin"] 
+          +aProp(height, 32)
+          width: auto
+          aspect-ratio: 1
+          background-size: contain
+          background-position: center
+          margin: 0
+          +aProp(margin-right, 12)
+          +mob
+            margin-right: 6px
+            height: 24px
+        [class$="gotoymaps__text"]
+          @extend .h5
+          margin: 0
+          height: auto
+      [class$="gototaxi"]
+        margin: 0
+        +mob
+          order: 3
+        [class$="gototaxi__container"] 
+          display: flex
+          height: auto
+          padding: aCalc(12) aCalc(16)
+          align-items: center
+          box-shadow: none
+          +aProp(border-radius, 12)
+          +mob
+            border-radius: 12px
+            padding: 6px 6px
+        [class$="gototaxi__pin"] 
+          +aProp(height, 32)
+          width: auto
+          aspect-ratio: 1
+          background-size: contain
+          background-position: center
+          // background-image: url('../img/yandex-ico.svg')
+          margin: 0
+          +aProp(margin-right, 12)
+          +mob
+            margin-right: 6px
+            height: 24px
+        [class$="gototaxi__text"]
+          @extend .h5
+          margin: 0
+          height: auto  
+      [class$="gototech"]
+        opacity: 0.2
+        align-self: flex-end
+        +mob
+          order: 1
+          margin: 0
+          align-self: flex-start
+  &__flt-ctr
+    display: flex
+    width: max-content
+    margin-bottom: aCalc(40)
+    gap: aCalc(8)
+    cursor: pointer
+    +mob
+      gap: 8px
+      margin-bottom: 24px
+  .js-ymap.js-ymap-dev
+    +r($sm)
+      min-height: 500px !important
+
+  &__circle
+    display: block
+    margin: aCalc(5) 0
+    margin-right: aCalc(6)
+    +wah(aCalc(14))
+    border-radius: 50%
+    // background-color: $LightGreen
+    background-color: var(--bg-active)
+    transition: background-color 0.2s
+    +mob
+      margin: 0 6px 0 0
+      +wah(14px)
+    
+
+  &__flt-btn
+    // flex: 1
+    // width: max-content
+    // display: flex
+    // align-items: center
+    
+
+.js-ymap-points
+  display: none
+
+.js-ymap
+  [class*="balloon_layout_normal"], [class*="balloon__layout"]
+    border-radius: aCalc(12)
+    // background-color: red
+    .h3
+      +dsk
+        +aProp(font-size, 20)
+        +aProp(line-height, 24)
+    .h6
+      +dsk
+        +aProp(font-size, 12)
+        +aProp(line-height, 16)
+  [class$="balloon__tail"]
+    display: none
+  [class$="balloon__close"]
+    // margin: 0
+    margin-bottom: 0
+    position: absolute
+    right: 0
+  [class$="balloon__close-button"]
+    margin: 0
+    +aProp(padding, 8)
+    +aProp(background-size, 16)
+    height: aCalc(32)
+    width: aCalc(32)
+    transition: opacity 0.2s
+
+  [class$="balloon__content"]
+    margin: 0 !important
+    padding: aCalc(16) !important
+    border-radius: aCalc(12)
+    > ymaps[id]
+      width: max-content !important
+      height: auto !important
+      .product-card
+        width: aCalc(376) !important
+        display: block
+        &__chars-ctr
+          &:empty
+            display: none
+        &__description
+          
+          margin-bottom: 0
+        &__img
+          aspect-ratio: unset
+          
+          img
+            +aProp(margin-top, 16)
+            height: auto
+            max-width: aCalc(376)
+          img[src=""]
+            display: none
+
+      .partner-card
+        // width: aCalc(265) !important
+      
+
+[data-modal-name='on-map-modal']
+  .product-card
+    &__description
+      margin-bottom: 0
+    &__img
+      aspect-ratio: unset
+      
+      img
+        margin-top: 16px
+        height: auto
+        max-width: 100vh
+      img[src=""]
+        display: none
+
+
+
+
+.partner-card
+  display: grid
+  grid-template-columns: aCalc(60) max-content
+  grid-template-rows: auto 1fr
+  width: min-content
+  min-height: 0
+  min-width: 0
+  column-gap: 10px
+  
+  +dsk
+    margin-right: 30px
+  +mob
+    width: min-content
+    // margin: 0 auto
+    grid-template-columns: 60px max-content
+  .partner-card__img
+    width: 100%
+    height: auto
+    aspect-ratio: 1
+    grid-row: 1/3
+    +aProp(padding, 6)
+    border-radius: 6px
+    border: 1px solid #F1F1F1
+    +mob
+      padding: 6px
+    img
+      display: block
+      +wah(100%)
+      object-fit: scale-down
+
+  .partner-card__title, .partner-card__desc
+    width: max-content
+
+  .partner-card__title
+    +aProp(margin-bottom, 6)
+    grid-column: 2/3
+    +mob
+      margin-bottom: 6px
+    > span 
+      @extend .buttonM
+  .partner-card__desc
+    grid-column: 2/3
+    > span 
+      +aProp(font-size, 16)
+      +aProp(line-height, 20)
+      +mob
+        font-size: 16px
+        line-height: 20px

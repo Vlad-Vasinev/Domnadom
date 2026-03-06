@@ -1,0 +1,196 @@
+
+.typo-blocks 
+
+
+h1, .text-h1, .h1 
+  font-size: aCalc(28)
+  font-style: normal
+  font-weight: 800
+  line-height: 100% 
+  +r($sm)
+    font-size: 24px
+
+.text-xxl 
+  font-size: aCalc(56)
+  font-style: normal
+  font-weight: 400
+  line-height: 105% 
+  +r($sm)
+    font-size: 26px
+    line-height: 120% 
+
+.text-xxlBold 
+  font-size: aCalc(52)
+  font-style: normal
+  font-weight: 800
+  line-height: 105% 
+  +r($sm)
+    font-size: 21px
+    line-height: 120% 
+
+.text-xl
+  font-size: aCalc(26)
+  font-style: normal
+  font-weight: 400
+  line-height: 120% 
+  +r($sm)
+    font-size: 18px
+
+h2, .h2, .text-xlBold
+  font-size: aCalc(28)
+  font-style: normal
+  font-weight: 800
+  line-height: 120% 
+  letter-spacing: -0.56px
+  +r($sm)
+    font-size: 18px
+    letter-spacing: unset
+
+h3, .h3
+  font-size: aCalc(15)
+  font-style: normal
+  font-weight: 400
+  line-height: 130% 
+  +r($sm)
+    font-size: 14px
+
+p, .text-l
+  font-size: aCalc(18)
+  font-style: normal
+  font-weight: 400
+  line-height: 130% 
+  +r($sm)
+    font-size: 16px
+
+.text-lBold
+  font-size: aCalc(18)
+  font-style: normal
+  font-weight: 800
+  line-height: 130% 
+  +r($sm)
+    font-size: 16px
+
+.text-m
+  font-size: aCalc(14)
+  font-style: normal
+  font-weight: 400
+  line-height: 130% 
+  +r($sm)
+    font-size: 14px
+    
+.text-mBold
+  font-size: aCalc(14)
+  font-style: normal
+  font-weight: 500
+  line-height: 130% 
+  +r($sm)
+    font-size: 14px
+
+.text-s
+  font-size: aCalc(13)
+  font-style: normal
+  font-weight: 400
+  line-height: 130% 
+  +r($sm)
+    font-size: 12px
+
+.text-sBold
+  font-size: aCalc(13)
+  font-style: normal
+  font-weight: 500
+  line-height: 130% 
+  +r($sm)
+    font-size: 12px
+
+.caps-m
+  font-size: aCalc(13)
+  font-style: normal
+  font-weight: 500
+  line-height: 100% 
+  text-transform: uppercase
+  +r($sm)
+    font-size: 12px
+
+.caps-sBold
+  font-size: aCalc(13)
+  font-style: normal
+  font-weight: 700
+  line-height: 100% 
+  text-transform: uppercase
+  +r($sm)
+    font-size: 12px
+
+.d-p1
+  font-size: aCalc(16)
+  font-style: normal
+  font-weight: 400
+  line-height: 130% 
+  +r($sm)
+    font-size: 14px
+
+.button-m 
+  font-size: aCalc(16)
+  font-style: normal
+  font-weight: 500
+  line-height: 100% 
+  +r($sm)
+    font-size: 16px
+  &._mob 
+    display: none 
+    +r($sm)
+      display: block
+    &.primary-btn
+      +r($sm)
+        margin-top: 16px
+
+.button-s
+  font-size: aCalc(14)
+  font-style: normal
+  font-weight: 500
+  line-height: 100% 
+  +r($sm)
+    font-size: 14px
+
+.button-link
+  font-size: aCalc(13)
+  font-style: normal
+  font-weight: 500
+  line-height: 100% 
+  text-transform: uppercase
+  +r($sm)
+    font-size: 12px
+
+.accent-link
+  display: flex
+  align-items: center
+  gap: aCalc(6)
+  +r($sm)
+    justify-content: center
+    margin-top: 24px
+    gap: 6px
+  &._left 
+    +r($sm)
+      justify-content: flex-start
+  svg, img 
+    width: aCalc(6)
+    height: aCalc(8)
+    margin-top: aCalc(2)
+    +r($sm)
+      width: 6px
+      height: 8px
+      margin-top: 2px
+  .button-s 
+    transition: color .3s
+  svg, img 
+    transition: transform .3s
+  &:hover 
+    .button-s 
+      +dsk
+        color: $BaseBlack
+    svg, img 
+      +dsk
+        transform: translateX(aCalc(6))
+
+.btn-accent
+  @extend .button-s !optional
+  color: $SyntheticPumpkin

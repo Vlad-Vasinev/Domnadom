@@ -1,0 +1,79 @@
+
+.d-newsSlider
+  @extend .swiper !optional
+  +r($sm)
+    overflow: unset
+  &:not(.swiper-initialized)
+    .d-news
+      +r($sm)
+        display: grid
+        align-items: unset
+        grid-auto-columns: 82.812%
+        -ms-grid-columns: unset
+        grid-template-columns: unset
+        grid-auto-flow: column
+        gap: 10px
+
+.d-news 
+  @extend .swiper-wrapper !optional
+  display: flex
+  flex-direction: column
+  gap: aCalc(20)
+  margin-bottom: aCalc(40)
+  +r($sm)
+    flex-direction: unset
+    margin-bottom: 0
+    gap: unset
+  &__el 
+    @extend .swiper-slide !optional
+    display: flex
+    gap: aCalc(20)
+    padding-bottom: aCalc(20)
+    border-bottom: 1px solid $CrystalBell
+    +r($sm)
+      padding-bottom: 0
+      border-bottom: unset
+    &:hover 
+      .d-news__content-info .text-l
+        +dsk 
+          color: $SyntheticPumpkin
+      .d-news__content-img img 
+        +dsk
+          transform: scale(1.05)
+    &-info 
+      width: aCalc(296)
+      flex-shrink: 0
+      +r($sm)
+        display: none
+      .text-l
+        color: $NamaraGrey
+        transition: color .3s
+  &__content 
+    display: flex
+    gap: aCalc(20)
+    +r($sm)
+      flex-direction: column
+      gap: 12px
+    &-img 
+      flex-shrink: 0
+      width: aCalc(297)
+      height: aCalc(186)
+      border-radius: aCalc(6)
+      overflow: hidden
+      +r($sm)
+        width: unset
+        border-radius: 6px
+        height: 187px
+      img, video 
+        transition: transform .3s
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &-info 
+      width: aCalc(772)
+      display: flex
+      flex-direction: column
+      gap: aCalc(12)
+      +r($sm)
+        width: unset
+        gap: 8px

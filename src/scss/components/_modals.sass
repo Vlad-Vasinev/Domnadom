@@ -1,0 +1,451 @@
+.modal-background
+  width: 100%
+  top: 0
+  left: 0
+  height: 100%
+  position: fixed
+  z-index: map-get($zindex, overlay)
+  display: block
+
+  background: #080808
+
+  opacity: 0
+  visibility: hidden
+  transition: opacity 0.3s, background-color 0.1s, visibility 0s 0.31s, z-index 0s 0.31s
+
+.modal.opened ~ .modal-background, .modal-background.opened, .modal-background_opened
+  visibility: visible
+  opacity: 0.6
+  transition: opacity 0.3s, background-color 0.1s, visibility 0s 0s, z-index 0s 0s
+  &._empty
+    background-color: rgba(0,0,0, 0.6)
+
+[data-modal-open]
+  cursor: pointer
+
+
+.modal
+  display: none
+  top: 0
+
+  height: auto
+  +aProp(width, 1118)
+  top: 45%
+  position: fixed
+  z-index: map-get($zindex, modal)
+  opacity: 0
+  visibility: hidden
+  max-height: 95%
+  left: 50vw
+
+  transform: translate(-50%, -40%)
+  transition: opacity 0.2s, visibility 0s 0.41s, transform 0.4s
+  +mob
+    width: 100%
+    top: 0
+    left: 0
+    min-height: 100vh
+    min-height: -webkit-fill-available
+    height: 100vh
+    max-height: 100vh
+    opacity: 1
+    transform: translate(-100%, 0%)
+    transition: visibility 0s 0.41s, transform 0.4s
+  &.n-gallery-modal
+    width: 100%
+    height: 100vh
+    top: 0
+    transform: translate(-50%, 0%) !important
+    +r($sm)
+      transform: translate(0%, 0%) !important
+    .modal__body 
+      +r($sm)
+        padding: 0
+    .modal__inner 
+      border-radius: 0
+      height: 100vh
+      padding: 0
+      overflow-y: auto
+      .modal__close-button
+        position: fixed
+        z-index: 300
+        top: aCalc(24)
+        right: aCalc(24)
+        width: aCalc(56)
+        height: aCalc(56)
+        display: grid 
+        justify-content: center
+        align-items: center
+        border-radius: aCalc(6)
+        background-color: #ffffff
+        +r($sm)
+          top: 12px
+          right: 12px
+          border-radius: 6px
+          width: 40px
+          height: 40px
+  &.opened
+    opacity: 1
+    visibility: visible
+    transition: transform 0.4s, visibility 0s 0s, opacity 0.2s
+    transform: translate(-50%, -50%)
+    +mob
+      transform: translate(0, 0)
+  &._inited
+    display: block
+  .modal__close-button
+    @extend .cls-btn-rotate
+    cursor: pointer
+    flex: 0 0 auto
+
+  .modal__body
+    width: 100%
+    position: relative
+    p.n-h6 
+      a 
+        text-decoration: underline
+
+    +mob
+      height: auto
+      overflow-y: scroll
+      overflow-x: hidden
+      +hideScroll
+      padding-bottom: 118px
+  .modal__inner
+    +aProp(border-radius, 12)
+    height: auto
+    width: 100%
+    position: relative
+    background-color: #fff
+    +aPadd(50, 60, 60, 60)
+    color: #000
+    transition: transform .3s
+    +mob
+      display: flex
+      flex-direction: column
+      height: 100%
+      border-radius: 0
+      padding: 15px
+      // border-bottom-left-radius: 0
+      // border-bottom-right-radius: 0
+    &._hided
+      display: none
+  &._form-modal.opened
+    transform: translate(-50%, 0)
+    transform: translate(100%, 0)
+    .modal__inner 
+      transform: translate(-100%, 0)
+  &._form-modal 
+    //transform: translate(-50%, 0)
+    //transform: translate(74%, 0)
+    max-height: unset
+    right: 0
+    left: auto
+    width: aCalc(743) 
+    transform: translate(100%, 0)
+    top: 0
+    opacity: 1
+    +r($sm)
+      width: 100%
+    .modal__top 
+      margin-bottom: aCalc(40)
+      +r($sm)
+        margin-bottom: 40px
+      .n-h2
+        margin-bottom: aCalc(40)
+        text-align: left
+        +r($sm)
+          margin-bottom: 40px
+    .modal__inner
+      border-radius: 0
+      width: 100%
+      height: 100vh
+      right: 0vw
+      padding: aCalc(290) 26.5908479139%
+      +r($sm)
+        right: 0%
+        padding: 140px 21px 40px
+      .n-button-green
+        justify-content: center
+        margin-top: 0
+        margin-bottom: aCalc(16)
+        height: aCalc(52)
+        +r($sm)
+          height: unset
+          margin-bottom: 16px
+      .n-h3 
+        text-align: left
+        margin-bottom: aCalc(24)
+        +r($sm)
+          display: none
+      .n-h6
+        text-align: left
+        opacity: 0.3
+      .modal__top-row
+        display: flex
+        gap: aCalc(8)
+        +r($sm)
+          gap: 8px
+        .n-button-green
+          background-color: #0A0A0A
+          margin-bottom: 0
+          width: 50%
+          +r($sm)
+            height: 44px
+      .modal__close-button
+        position: absolute
+        right: aCalc(24)
+        top: aCalc(24)
+        +r($sm)
+          right: 12px 
+          top: 12px
+      .ui-input input 
+        padding-bottom: 0
+        border-color: #000000
+        &::placeholder
+          opacity: 0.2
+          color: #000000
+          font-size: aCalc(24)
+          line-height: 120%
+          font-weight: 500
+          +r($sm)
+            font-size: 19px
+      .ui-input__float-label
+        top: -2%
+        color: #000000
+
+  .modal__top
+    width: 100%
+    display: flex
+    justify-content: space-between
+    // align-items: center
+    +aProp(margin-bottom, 40)
+    +mob
+      margin-bottom: 24px
+    span
+      color: #000
+    h2, .h2
+      font-weight: 600
+    span:not([class])
+      @extend .h2
+      font-weight: 600
+    // svg
+    //   display: block
+    //   +aProp(width, 32)
+    //   height: auto
+      // +mob
+      //   width: 32px
+
+.modal[data-modal-name="mini-gallery"]
+  width: 100vw
+  max-height: 100%
+  top: 0
+  left: 0
+  +dsk
+    transform: none
+  .modal__inner
+    border-radius: 0
+    padding: 0
+    height: 100vh
+  .modal__top
+    // position: absolute
+    z-index: 1
+    top: 0
+    left: 0
+    right: unset
+    padding: aCalc(40) aCalc(40) 0
+    margin-bottom: 0
+    +mob
+      padding: 16px
+  .modal__body
+    padding: aCalc(100) aCalc(500)
+    padding-top: aCalc(28)
+    max-height: 100%
+    overflow-y: scroll
+    +mob
+      padding: 8px 16px 118px
+
+.modal[data-modal-name="form-modal"], .modal.modal_with-form
+  text-align: center
+  +dsk
+    +aProp(width, 743)
+  // .modal__inner
+  //   +dsk
+  //     padding: aCalc(50)
+  .modal__top
+    flex-direction: column
+    +dsk
+      // +aProp(margin-bottom, 30)
+
+    span + span
+      +dsk
+        +aProp(margin-top, 10)
+      +mob
+        margin-top: 10px
+    .modal__close-button
+      margin: 0
+      order: -1
+      +aProp(margin-bottom, 8)
+      +mob
+        align-self: flex-end
+        margin-bottom: 57px
+  .modal__body
+    padding: 0
+    +aProp(padding-bottom, 24)
+    +mob
+      padding-bottom: 24px
+    button
+      +aProp(margin-top, 8)
+      width: 100%
+      +mob
+        margin-top: 8px
+    .form-policy
+      +aProp(margin-top, 24)
+      +mob
+        margin-top: 16px
+
+.modal.modal_equip-table, .modal.modal_msg-popup
+  +dsk
+    text-align: center
+    +aProp(width, 600)
+    .modal__inner
+      padding: aCalc(50)
+    .modal__top
+      flex-direction: column
+      +aProp(margin-bottom, 8)
+      .modal__close-button
+        margin: 0
+        order: -1
+        +aProp(margin-bottom, 8)
+    .modal__body
+      padding: 0
+  +mob
+    height: auto
+    min-height: unset
+
+    top: unset
+    bottom: 0
+    &:not(.opened)
+      transform: translateY(100%)
+    .modal__inner
+      border-radius: 24px 24px 0 0
+      padding-bottom: 85px
+    .modal__body
+      padding: 0
+    .modal__top
+      justify-content: flex-end
+.modal.modal_equip-table
+  text-align: left
+  +dsk
+    display: none
+  +mob
+    .modal__body
+      padding-bottom: 17px
+    .modal__top
+      justify-content: center
+
+.modal.modal_sheet, .modal.modal_on-map
+  top: unset
+  bottom: 0
+  height: auto
+  min-height: unset
+  transform: translate(0, 100%)
+  &.opened
+    transform: translate(0, 0)
+  +dsk
+    display: none
+  .modal__body
+    padding: 0
+  .modal__top
+    margin-bottom: 0
+  .modal__close-button
+    align-self: flex-start
+    svg
+      padding: 4px
+
+  .modal__inner
+    +mob
+      border-radius: 24px 24px 0 0
+      height: auto
+      &:before
+        content: ''
+        position: absolute
+        z-index: 1
+        width: 50px
+        height: 2px
+        border-radius: 2px
+        top: 8px
+        left: calc( 50% - 25px )
+        background-color: #E0E0E0
+.modal.modal_sheet 
+  .modal__body
+    padding-top: 16px
+    padding-bottom: 60px
+  .modal__inner
+    &:before
+      display: none
+.modal[data-modal-name="what-included-modal"]
+
+  +dsk
+    height: 100%
+    max-height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    transform: translateY(0)
+    overflow-y: scroll
+    padding: 40px 0
+    padding-left: var(--scrollbar-width)
+    .modal__inner
+      +aProp(width, 1026)
+      margin: 0 auto
+    .modal__body
+      // height: 770px
+      // overflow-y: scroll
+    .modal__top
+      flex-direction: column
+      +aProp(margin-bottom, 30)
+      .modal__close-button
+        margin: 0
+        order: -1
+        +aProp(margin-bottom, 8)
+  +mob
+    .modal__body
+      padding-bottom: 0
+
+.loading
+
+  &::after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background-repeat: no-repeat
+    background-size: 25%
+    background-color: #fff9
+    top: 0
+    left: 0
+    z-index: 1
+    background-position: center
+    background-image: url(../img/loadingIcon.svg)
+.form-response
+  width: 100%
+  // text-align: left
+  display: none
+  +mob
+    font-size: 24px
+    line-height: 32px
+
+.form-response, .form-request
+  &.hidden
+    display: none
+  &.visible
+    display: block
+.error-message-ctr
+  text-align: center
+  color: #f44
+  margin-top: aCalc(16)
+  +mob
+    margin-top: 16px
+  &:empty
+    display: none

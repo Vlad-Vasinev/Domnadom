@@ -1,0 +1,76 @@
+
+.small-card 
+  pointer-events: none
+  min-width: aCalc(317)
+  height: aCalc(279)
+  padding: aCalc(16)
+  border-radius: aCalc(4)
+  background-color: $White
+  display: flex
+  flex-direction: column
+  gap: aCalc(12)
+  justify-content: space-between
+  &__content 
+    min-width: aCalc(285)
+    height: aCalc(180)
+    border-radius: aCalc(4)
+    overflow: hidden
+    img, video 
+      width: 100%
+      height: 100%
+  &__info 
+    display: flex
+    flex-direction: column
+    gap: aCalc(8)
+  &__titles 
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__description 
+    display: flex
+    align-items: center
+    gap: aCalc(12)
+    .title 
+      display: flex
+      align-items: center
+      gap: aCalc(6)
+      +r($sm)
+        gap: 6px
+      img, svg
+        width: aCalc(24) 
+        height: aCalc(24)
+        +r($sm)
+          width: 24px
+          height: 24px
+    .star 
+      margin-left: aCalc(12)
+      display: flex
+      align-items: center
+      gap: aCalc(3)
+      +r($sm)
+        gap: 3px
+        margin-left: 12px
+      svg, img 
+        width: aCalc(16) 
+        height: aCalc(16)
+        +r($sm)
+          width: 16px
+          height: 16px
+    .review 
+      margin-left: aCalc(8)
+      display: flex
+      align-items: center
+      gap: aCalc(3)
+      +r($sm)
+        margin-left: 8px
+        gap: 3px
+      svg, img 
+        width: aCalc(16) 
+        height: aCalc(16)
+        +r($sm)
+          width: 16px
+          height: 16px
+      .text-s 
+        color: $NamaraGrey
+
+//2560 1347

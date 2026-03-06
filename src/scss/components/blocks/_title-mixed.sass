@@ -1,0 +1,20 @@
+
+.title-mixed
+  text-align: center
+  +r($sm)
+    text-align: unset
+    display: none
+  &._mob 
+    display: none
+    +r($sm)
+      display: block
+  a 
+    display: inline
+    color: $SyntheticPumpkin
+    // border-bottom: aCalc(2) solid $SyntheticPumpkin
+    +r($sm)
+      border-bottom: 2px solid $SyntheticPumpkin
+    &.nbl-textAnimation 
+      &::after
+        background: $SyntheticPumpkin
+        height: acalc(2)

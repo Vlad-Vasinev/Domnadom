@@ -1,0 +1,135 @@
+
+body
+  color: $baseTextColor
+  font-weight: 400
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+div,
+span
+  color: inherit
+  font-family: inherit
+  font-display: inherit
+  font-weight: inherit
+  margin: 0
+  transition: color 0.2s linear
+
+div, span
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p
+    display: block
+
+p, li
+  @extend .h5
+
+.breadcrumb
+
+  color: inherit
+  +aProp(font-size, 14)
+  +aProp(line-height, 18)
+  +r($sm1)
+    font-size: 12px
+    line-height: 16px
+  *
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+
+.buttonM
+  font-weight: 600
+  +aProp(font-size, 18)
+  +aProp(line-height, 24)
+  +mob
+    font-size: 16px
+    line-height: 24px
+
+.buttonS
+  font-weight: 600
+  +aProp(font-size, 16)
+  +aProp(line-height, 20)
+  letter-spacing: 0em
+  +mob
+    font-size: 13px
+    line-height: 18px
+
+button, .button,  .button_medium
+  @extend .buttonM
+  // background: $LightGreen
+  //color: #fff
+  font-weight: 600
+  +aPadd(20, 32)
+  +aProp(border-radius, 12)
+  min-width: max-content
+  width: max-content
+  flex-shrink: 0
+  display: block
+  +mob
+    padding: 14px 32px
+    border-radius: 12px
+  &:active
+    transform: scale(.97)
+  &.button_grey
+    color: $baseTextColor
+    // background-color: $ColdStone
+
+.fill-button.button_icon, .button_medium.button_icon, .slide-button.button_icon
+  .slide-button-inner span 
+    display: flex !important
+    justify-content: space-between
+    align-items: center
+    svg 
+      width: aCalc(24)
+      height: aCalc(24)
+      +r($sm)
+        width: 24px
+        height: 24px
+  span 
+    +r($sm)
+      display: flex !important
+      justify-content: space-between
+      align-items: center
+
+.button_small
+  @extend .button_medium
+  @extend .buttonS
+  +aPadd(16, 24)
+  +mob
+    padding: 10px 24px
+
+.cls-btn-rotate
+  +dsk
+    svg
+      transition: transform 0.3s
+    &:hover
+      svg
+        +dsk
+          transform: rotate(90deg)
+.cls-btn-rotate-svg
+  +dsk
+    transition: transform 0.3s
+    &:hover
+      transform: rotate(90deg)
+
+table, caption, tbody, tfoot, thead, tr, th, td
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+@import "slideButton"

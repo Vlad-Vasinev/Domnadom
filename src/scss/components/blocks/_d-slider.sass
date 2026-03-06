@@ -1,0 +1,104 @@
+
+.d-slider
+  @extend .swiper !optional
+  --bulletWidth: aCalc(87)
+  +r($sm)
+    margin: 0 -12px
+    padding: 0 0 77px
+    --bulletWidth: 87px
+    border-bottom: 1px solid #EFEFEF
+  &__wrapper
+    @extend .swiper-wrapper !optional
+    position: relative
+    +r($sm)
+      position: unset
+  .swiper-pagination
+    width: aCalc(360)
+    overflow-x: hidden
+    position: absolute
+    height: max-content
+    overflow-y: auto
+    top: aCalc(396)
+    left: aCalc(40)
+    z-index: 1
+    display: flex
+    align-items: center
+    gap: aCalc(4)
+    +r($sm)
+      bottom: 16px 
+      top: unset
+      left: 12px
+      right: 12px
+      width: 100%
+      gap: 4px
+    .swiper-pagination-bullet 
+      opacity: unset
+      background-color: $Steam 
+      width: var(--bulletWidth)
+      height: aCalc(4)
+      border-radius: 0 !important
+      margin: 0
+      flex-shrink: 0
+      position: relative
+      +r($sm)
+        height: 4px
+      &.completed::before 
+        position: absolute
+        content: ""
+        left: 0
+        top: 0
+        border-radius: aCalc(4)
+        height: 100%
+        width: 100% !important
+        background-color: rgba(255, 120, 61, 1) !important
+        z-index: 100
+        transition: none
+  .swiper-pagination-bullet-active
+    background-color: $Steam 
+    max-width: aCalc(80)
+    border-radius: aCalc(2)
+    position: relative
+    width: var(--bulletWidth)
+    +r($sm)
+      max-width: unset
+    &::before
+      position: absolute
+      content: ""
+      left: 0
+      top: 0
+      border-radius: aCalc(4)
+      height: 100%
+      transition: width cubic-bezier(0.490, 0.490, 0.590, 0.690) .2s
+      width: var(--currentTime)
+      background-color: rgba(255, 120, 61, 1) !important
+      z-index: 100
+  &__card 
+    @extend .swiper-slide !optional
+    height: aCalc(1000)
+    position: relative
+    +r($sm)
+      height: 310px
+      position: unset
+      display: flex
+      flex-direction: column
+      gap: 16px
+    &-info 
+      position: absolute
+      width: aCalc(400)
+      height: aCalc(400)  
+      top: aCalc(20)
+      left: aCalc(20)
+      padding: aCalc(20)
+      background-color: $White 
+      +r($sm)
+        position: unset
+        order: 1
+        height: unset
+        width: unset
+        padding: 0 12px
+        left: unset
+        top: unset
+    img, video 
+      width: 100%
+      height: 100%
+      object-fit: cover

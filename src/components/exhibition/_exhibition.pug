@@ -1,0 +1,61 @@
+block vars 
+  - var breadcrumbText = ["Main", "Manufacturers"]
+.page__container
+  .scroll-marker
+  include ../blocks/_dFixedBlock
+  section.page__block.NoPadding(id="firstBlock")
+    include ../blocks/_mainVideoSecond
+
+  section.page__block.d-middle._black
+    .text-xxlBold.d-mainTitle
+      |We've created a place where you can see and compare real
+      |homes, step inside, evaluate the layouts, quality of finishes,
+      |materials—and experience the atmosphere of your future home.
+    include ../blocks/_exhibition-block
+
+  section.page__block.d-middle._black
+    //-include ../blocks/_breadcrumb
+    .title-mixed.text-xxl.d-mainTitle
+      |Today, <br/>more than <a href="#" class="text-xxl nbl-textAnimation">60 participants</a> from major <br/>
+      |construction companies are represented on one platform
+    .title-mixed.text-xxl.d-mainTitle._mob
+      |Today, more than <br/> <a href="#" class="text-xxl">78 projects</a> from major <br/>
+      |construction companies are presented on one platform
+    ul.filter-links 
+      li 
+        button.button-s._active(data-tab="houses") Houses
+      li 
+        button.button-s(data-tab="bathhouses") Baths
+      li 
+        button.button-s(data-tab="services") Related services
+    
+    include ../blocks/_dGridSlider
+    include ../blocks/_dGridSlider2
+    include ../blocks/_dGridSlider3
+
+  section.page__block.NoPaddingDesktop._black
+    //- .text-xxl.d-mainTitle План выставки 
+    include ../blocks/_layer-map
+    include ../blocks/_layer-map-mob
+
+  section.page__block.d-middle._black
+    .title-mixed.text-xxl.d-mainTitle
+      |The exhibition features leading construction <br/> <a href="#" class="text-xxl nbl-textAnimation">companies</a>
+      |and <a href="#" class="text-xxl nbl-textAnimation">manufacturers</a> of materials
+    include ../blocks/_dGridSmallSlider
+
+    include ../blocks/_dGridSmall
+    a.accent-link._left(href="#")
+      .btn-accent All manufacturers
+      <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8" fill="none">
+        <path d="M1 7L4 4L1 1" stroke="#FF783D" stroke-width="1.5"/>
+      </svg>
+
+  section.page__block.d-middle._black
+    .text-xxl.d-mainTitle  Exhibition news
+    include ../blocks/_newsSlider
+    a.accent-link._left(href="#")
+      .btn-accent All news
+      <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8" fill="none">
+        <path d="M1 7L4 4L1 1" stroke="#FF783D" stroke-width="1.5"/>
+      </svg>

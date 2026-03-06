@@ -1,0 +1,51 @@
+
+.d-header 
+  display: flex
+  justify-content: space-between
+  position: absolute
+  left: aCalc(20)
+  top: aCalc(12)
+  right: aCalc(20)
+  z-index: 100
+  +r($sm)
+    display: none
+  a, .text-s, .button-m 
+    color: $White
+  &__icon 
+    width: aCalc(196)
+    height: aCalc(34)
+    img, svg 
+      width: 100% 
+      height: 100% 
+      object-fit: cover
+  &__list 
+    display: flex
+    align-items: center
+    gap: aCalc(20)
+    margin-left: aCalc(340)
+    li 
+      a
+        span 
+          @extend .button-link !optional
+  &__user 
+    margin-left: auto
+    display: flex
+    align-items: center
+    gap: aCalc(80)
+    &-tour 
+      display: flex
+      align-items: center
+      gap: aCalc(12)
+      svg, img 
+        width: aCalc(24)
+        height: aCalc(24)
+        object-fit: cover
+      &:hover 
+        .slide-button-inner > span
+          +dsk
+            -webkit-transform: translateY(-100%)
+            -ms-transform: translateY(-100%)
+            transform: translateY(-100%)
+      svg 
+        path
+          transition: stroke .3s, fill .3s

@@ -1,0 +1,41 @@
+block vars 
+  - var breadcrumbText = ["Main", "СConstruction company «Terem»"]
+.page__container._rent
+  .scroll-marker
+  include ../blocks/_dFixedBlock
+
+  section.page__block.d-middle._black._small(id="firstBlock")
+    <ul class="breadcrumbs _small">
+      <li><a class="text-s" href="#">Main</a></li>
+
+      <li><span class="text-s" >Exhibition plan</span></li>
+    </ul>
+
+  section.page__block.d-middle._black
+    .text-xxlBold We invite construction companies, manufacturers, and suppliers of building materials to cooperate!
+
+    include ../blocks/_marquee
+
+    .catalog-form
+      form.form(data-action="/api/consult-form" data-thanks-url="/thanks.html")
+        .text-xlBold Partner articles
+        .text-l
+          |We are open to our partners and offer favorable terms for displaying sample houses,
+          |bathhouses, gazebos, greenhouses, sheds, and other structures for private homes, as well as related building materials.
+        <div id="smartcaptcha" class="smart-captcha"></div>
+        <div class="form__block">
+          <input type="text" required placeholder="" name="name" />
+          <label class="text-label"> Your name *</label>
+        </div>
+        <div class="form__block">
+          <input type="text" required placeholder="" name="phone" />
+          <label class="text-label">phone</label>
+        </div>
+        <div class="form__block _checkbox">
+          <label>
+            <input type="checkbox" placeholder="" name="permission" />
+            <span></span>
+            .text-s I agree to the Personal Data Processing Policy and the processing of personal data
+          </label>
+        </div>
+        button.button-m.primary-btn(type="submit") Send

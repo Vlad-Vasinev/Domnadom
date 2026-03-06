@@ -1,0 +1,489 @@
+.page
+  .page__container
+    +mob
+      margin-top: 58px
+    &._rent 
+      .text-xxlBold  
+        text-align: center
+        width: aCalc(1247)
+        margin: 0 auto aCalc(80)
+        color: $RhinocerosBeetle
+        +r($sm)
+          text-align: left
+          width: unset
+          margin: 0 auto 40px
+      .catalog-form
+        width: aCalc(614)
+        margin: 0 auto
+        +r($sm)
+          width: unset
+        .text-xlBold, .text-l 
+          text-align: center
+          +r($sm)
+            text-align: left
+        // .text-l
+        //   margin-bottom: aCalc(40)
+        .form 
+          +r($sm)
+            margin-bottom: 64px
+    &._no-padding-top
+      padding-top: 0
+    & + .page__container
+      padding-top: aCalc(120)
+      +mob
+        padding-top: 60px
+  .page__block, .page__heading
+    & >
+      h1, .h1
+        +aProp(margin-bottom, 60)
+        +mob
+          margin-bottom: 16px
+        &:only-child
+          margin: 0
+      .h2, h2
+        font-weight: 600
+      p, .h2, h2
+        & + div, p, .h2, h2
+          +aProp(margin-top, 24)
+          +mob
+            margin-top: 16px
+  .page__block
+    padding-left:  aCalc(40)
+    padding-right: aCalc(40)
+    margin-bottom: aCalc(160)
+    position: relative
+    +mob
+      padding-left: 12px
+      padding-right: 12px
+      margin-bottom: 64px
+    &.NoPadding 
+      padding: 0
+    &.NoPaddingDesktop 
+      padding: 0
+      +r($sm)
+        padding: 0 12px
+    &._map
+      .text-xxl.d-mainTitle, h1, .h1
+        color: $RhinocerosBeetle
+        margin: 0 aCalc(178) aCalc(40)
+        +r($sm)
+          margin: 0 0 16px 0
+    &.d-middle 
+      // margin-left: aCalc(337)
+      margin-left: aCalc(178)
+      margin-right: aCalc(178)
+      padding-left: 0
+      padding-right: 0
+      +r($sm)
+        margin-left: 0
+        margin-right: 0
+        padding: 0 12px
+    &.marginNo 
+      margin: 0
+    &._small 
+      margin-bottom: aCalc(80)
+      +r($sm)
+        margin-bottom: 24px
+    & +
+      .page__block, .page__content-wrapper
+        padding-top: 0
+        +mob
+          padding-top: 0
+    &:last-child
+      padding-bottom: 0
+    &.paddingMobSm
+      +r($sm)
+        padding: 0 12px
+    &._bottomBig 
+      padding-bottom: aCalc(180)
+      +r($sm)
+        padding-bottom: 0
+    &._bottomBigBorder
+      padding-bottom: aCalc(180)
+      border-bottom: 1px solid #F1F1F1
+      +r($sm)
+        padding-bottom: 0
+        border-bottom: none
+    &._bottomMobBorder
+      margin-bottom: 0
+      +r($sm)
+        border-bottom: 1px solid #F1F1F1
+        padding-bottom: 60px
+  .page__block.page__block_full-widthMob
+    +r($sm)
+      padding-left: 0
+      padding-right: 0
+  .page__block.page__block_full-width
+    padding-left: 0
+    padding-right: 0
+    .page-block-heading.page-block-heading_border
+      padding: 0 aCalc(40)
+      +mob
+        padding: 0 12px
+    .n-h2.section-title
+      padding: 0 aCalc(40)
+      +mob
+        padding: 0 16px
+    & > .h2, & > h2
+      padding: 0 aCalc(30)
+      +mob
+        padding: 0 16px
+    &:first-child
+      & + .page__block 
+        // +aProp(padding-top, 100)
+        border-bottom: 1px solid #F1F1F1
+        +aProp(padding-top, 0)
+        +mob
+          padding-top: 50px
+  .page__block.page__block_full-w-mob
+    +mob
+      padding-left: 0
+      padding-right: 0
+      .page-block-heading.page-block-heading_border
+        padding: 0 16px
+      & > .h2, & > h2
+        padding: 0 16px
+    // &.paddingMobSm
+    //   +r($sm)
+    //     padding-left: 12px
+    //     padding-right: 12px
+    .n-links-project
+      .n-header-drop__ul 
+        +r($sm)
+          padding: 0 12px
+  // .page__block.page__block_article 
+  //   +dsk
+  //     +aProp(padding-left, 505)
+  //     +aProp(padding-right, 505)
+  //   & > * + *
+  //     +aProp(margin-top, 40)
+  //     +mob
+  //       margin-top: 24px
+  //   & > h1, & > .h1
+  //     font-weight: 600     
+  //     margin: 0 
+  //     +aProp(margin-bottom, 40)
+  //     +mob
+  //       margin-bottom: 24px
+  //   & > h1 + *, & > .h1 + *
+  //     margin-top: 0
+
+  .page__block.page__block_header-offset
+    +aProp(--plus-padding, 24)
+    padding-top: calc(var(--header-height) + var(--plus-padding))
+    +mob
+      padding-top: 0
+      // --plus-padding: 16px
+    & + .page__block_no-pad-top + .page__block
+      +aProp(padding-top, 100)
+      +mob
+        padding-top: 50px
+
+  .page__block.page__block_no-pad-top
+    padding-top: 0 !important
+  .page__project-block-h
+    padding: 0 aCalc(155) aCalc(40)
+    +mob
+      padding: 0 0 16px
+  .page__block_full-width .page__project-block-h
+    padding: 0 aCalc(195) aCalc(40)
+    +mob
+      padding: 0 16px 16px
+    
+  .page__block.page__block_extra-padding-h
+    +dsk
+      +aProp(padding-left, 155)
+      +aProp(padding-right, 155)
+  .page__block.page__block_border-top
+    border-top: 1px solid #E5E5E5
+  .page__block.page__block_article.page__block_header-offset
+    +aProp(--plus-padding, 50) 
+    margin-bottom: 0 
+    border-bottom: 1px solid #F1F1F1
+    padding-bottom: aCalc(180)
+    margin-top: aCalc(180)
+    +mob
+      margin-top: 60px
+      --plus-padding: 16px
+      padding-bottom: 80px
+  .page__block.page__block_text
+    a:not([class])
+      text-decoration: underline
+    h1, .h1, h2, .h2, .h3
+      font-weight: 600
+    h1 + p, h1 + .h2, p + .h2, h1 + h2, p + h2, h1 + .h3, p + .h3
+      +aProp(margin-top, 40)
+      +mob
+        margin-top: 24px
+    .h2 + p, h2 + p, .h3 + p, p + p
+      +aProp(margin-top, 24)
+      +mob
+        margin-top: 16px
+  .page__block.page__block_centered
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  .page__content-wrapper
+    +dsk
+      +aProp(max-width, 920)
+      margin: 0 auto
+    & +
+      .page__block, .page__content-wrapper
+        padding-top: aCalc(120)
+        +mob
+          padding-top: 50px
+  .page__heading
+    +dsk
+      text-align: center
+      
+    & +
+      .page__block, .page__content-wrapper
+        padding-top: aCalc(60)
+        +mob
+          padding-top: 16px
+
+.page__container_catalog
+  hr
+    position: absolute
+    left: 0
+    right: 0
+    +mob
+      display: none
+  .page-block-heading
+    +dsk
+      justify-content: center
+      margin-bottom: aCalc(60)
+      h1, .h1
+        text-align: center
+    +mob
+      margin-bottom: 10px
+  .page__breadcrumb
+    +dsk
+      padding-bottom: aCalc(80)
+  .page__block_header-offset
+    img.full-width-img_mobile-logo
+      +mob
+        padding: 0 16px
+        margin-bottom: 16px
+  .page__block + .page__block
+    padding-top: 0 !important
+  
+
+
+.page-block-bottom
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: nowrap
+  +aProp(margin-top, 60)
+  +mob
+    margin-top: 30px
+
+.page-block-heading
+  display: flex
+  width: 100%
+  justify-content: space-between
+  font-weight: 600
+  +aProp(margin-bottom, 24)
+  +mob
+    margin-bottom: 16px
+    
+  &.page-block-heading_border
+    +aProp(padding-bottom, 24)
+    border-bottom: 1px solid #E5E5E5
+    +aProp(margin-bottom, 40)
+    +mob
+      margin-bottom: 30px
+      padding-bottom: 16px
+  .page-block-heading__link
+    display: none
+    +dsk
+      display: flex
+      align-items: center
+      +aProp(gap, 10)
+    svg
+      display: block
+      +aProp(width, 32)
+      height: auto
+      aspect-ratio: 1
+      [fill]
+        transition: fill 0.2s linear
+
+.catalog-paragraph
+  +aProp(padding-top, 60)
+  border-top: 1px solid #E5E5E5
+  margin-top: aCalc(40)
+  +mob
+    margin-top: 40px
+    padding-top: 45px
+  header
+    margin: 0 auto
+    text-align: center
+  .page-block-heading
+    justify-content: center
+  .catalog-tags
+    border-bottom: none
+    padding-bottom: aCalc(60)
+    +mob 
+      gap: 6pxQ
+      flex-direction: column
+      padding-bottom: 40px
+    a.toggle-tag 
+      +mob 
+        margin: 0 auto
+      span
+        +mob
+          padding: 8px 12px
+  h1, h2, .h2, .h3, .h4
+    font-weight: 600
+    margin: aCalc(24) 0
+    +mob
+      margin: 16px 0
+  &__wrapper 
+    max-width: aCalc(910)
+    margin: 0 auto
+    +mob 
+      max-width: unset
+    .h4 
+      margin-top: aCalc(40)
+      +mob 
+        margin-top: 24px
+    h6 
+      margin-bottom: aCalc(16)
+      +mob 
+        margin-bottom: 16px
+
+  ul
+    margin-bottom: 40px
+    +mob
+      margin-bottom: 24px
+      
+    li
+      padding-left: 16px
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        display: inline-block
+        +wah(0.3334em)
+        border-radius: 100%
+        // background-color: $LightGreen
+        margin: 0.5em 0
+        
+        left: 0
+        top: 0
+        
+    li + li
+      margin-top: 10px
+      +mob
+        margin-top: 8px
+  .h5 + ul, p + ul
+    margin-top: 10px
+    +mob
+      margin-top: 8px
+  p
+    @extend .h5
+    overflow-wrap: break-word
+    margin-bottom: 10px
+    +mob
+      margin-bottom: 8px
+  p + p
+    margin-top: 10px
+    +mob
+      margin-top: 8px
+  > *:first-child
+    margin-top: 0
+  > *:last-child
+    margin-bottom: 0
+
+.page.n-news-page
+  section 
+    margin-top: aCalc(206)
+  
+  &.no-section-mg 
+    section 
+      margin-top: 0
+
+.page .page__block.page__block_article
+  padding: 0 aCalc(557)
+  +r($sm)
+    padding: 0 12px
+  .n-h2 
+    margin-bottom: aCalc(24)
+    +r($sm)
+      margin-bottom: 24px
+  img.full-width-img
+    width: aCalc(806)
+    height: aCalc(480)
+    object-fit: cover
+    margin-bottom: aCalc(40)
+    border-radius: 0
+    +r($sm)
+      margin-bottom: 24px
+      width: 100%
+      height: 210px
+  .n-p1
+    margin-top: 0
+    margin-bottom: aCalc(40)
+    +r($sm)
+      margin-bottom: 24px
+    &._smMargin
+      margin-bottom: aCalc(16)
+      +r($sm)
+        margin-bottom: 8px
+  .n-h3
+    margin-top: 0
+    margin-bottom: aCalc(16)
+    +r($sm)
+      margin-bottom: 8px
+  ul 
+    margin-bottom: aCalc(40)
+    +r($sm)
+      margin-bottom: 24px
+    li 
+      position: relative
+      +r($sm)
+        padding-left: 28px
+      &::before 
+        position: absolute
+        content: ""
+        width: aCalc(4)
+        height: aCalc(4)
+        border-radius: 50%
+        background-color: #000000
+        top: 50%
+        left: aCalc(-14)
+        +r($sm)
+          width: 4px
+          height: 4px
+          left: 10px
+
+.page .page__block.plain-html
+  padding-left: aCalc(520)
+  padding-top: aCalc(40)
+  +r($sm)
+    padding-left: 12px
+    padding-top: 24px
+  .h2, h2 
+    font-size: aCalc(26)
+    line-height: 110%
+    font-weight: 500
+    color: #0B0B0B
+    font-family: $secondaryFont
+    letter-spacing: -1.56px
+    text-transform: uppercase
+    margin: aCalc(40) 0
+    +r($sm)
+      margin: 24px 0
+      font-size: 19px
+      letter-spacing: -1.14px
+  p, .p, li
+    font-size: aCalc(16)
+    line-height: 120%
+    font-weight: 400
+    color: #0B0B0B
+    +r($sm)
+      font-size: 15px
+    &._opacity
+      opacity: 0.4

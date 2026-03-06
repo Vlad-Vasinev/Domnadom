@@ -1,0 +1,62 @@
+
+.page__container
+  .scroll-marker
+  include ../blocks/_dFixedBlock
+  section.page__block.NoPadding(id="firstBlock")
+    include ../blocks/_dMainVideo
+
+  section.page__block.d-middle._black
+    .title-mixed.text-xxl.d-mainTitle
+      |More than <a href="#" class="text-xxl nbl-textAnimation">78 projects</a> for country life <br/>
+      |from <a href="#" class="text-xxl nbl-textAnimation">market leaders</a> in one place
+    .title-mixed.text-xxl.d-mainTitle._mob
+      |More than <a href="#" class="text-xxl nbl-textAnimation">78 projects</a> for country life <br/>
+      |from <a href="#" class="text-xxl nbl-textAnimation">market leaders</a> in one place
+    ul.filter-links 
+      li 
+        .button-s._active(data-tab="houses") Houses
+      li 
+        .button-s(data-tab="bathhouses") Baths
+      li 
+        .button-s(data-tab="services") Related services
+    
+    include ../blocks/_dGridSlider
+    include ../blocks/_dGridSlider2
+    include ../blocks/_dGridSlider3
+
+  //- section.page__block.d-middle._black
+  //-   include ../blocks/_dSlider
+
+  section.page__block.d-middle._black
+    include ../blocks/_benefits
+
+  section.page__block.NoPaddingDesktop._black
+    include ../blocks/_layer-map
+    include ../blocks/_layer-map-mob
+
+
+  section.page__block.d-middle._black
+    //-.text-xxl.d-mainTitle На выставке представлены ведущие строительные <br/> компании и производители материалов
+    .title-mixed.text-xxl.d-mainTitle
+      |The exhibition features leading construction <br/> <a href="#" class="text-xxl nbl-textAnimation">companies</a>
+      |and <a href="#" class="text-xxl nbl-textAnimation">material producers</a>
+    .title-mixed.text-xxl.d-mainTitle._mob
+      |The exhibition features leading construction <br/> <a href="#" class="text-xxl nbl-textAnimation">companies</a>
+      |and <a href="#" class="text-xxl nbl-textAnimation">material producers</a>
+    include ../blocks/_dGridSmallSlider
+
+    include ../blocks/_dGridSmall
+    a.accent-link._left(href="#")
+      .btn-accent All manufacturers
+      <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8" fill="none">
+        <path d="M1 7L4 4L1 1" stroke="#FF783D" stroke-width="1.5"/>
+      </svg>
+
+  section.page__block.d-middle._black
+    .text-xxl.d-mainTitle  Exhibition news
+    include ../blocks/_newsSlider
+    a.accent-link._left(href="#")
+      .btn-accent All news
+      <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8" fill="none">
+        <path d="M1 7L4 4L1 1" stroke="#FF783D" stroke-width="1.5"/>
+      </svg>

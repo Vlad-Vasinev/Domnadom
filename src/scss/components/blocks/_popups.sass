@@ -1,0 +1,159 @@
+
+.popup-wrapper
+  position: fixed
+  top: 0
+  z-index: 1
+  width: 100%
+  &._active 
+    z-index: 2
+    .modal-bg  
+      z-index: 1
+      width: 100% 
+    .popup
+      transform: translateX(0)
+      &._layer-mob
+        transform: translateX(0) translateY(0) 
+  .modal-bg 
+    width: 0
+    height: 100vh
+    position: fixed
+    z-index: -1
+    transition: opacity .3s
+    background-color: rgba(0, 0, 0, 0.4)
+
+.popup
+  padding: aCalc(280) aCalc(218)
+  background-color: $White
+  z-index: 10
+  width: aCalc(970)
+  margin-left: auto
+  position: relative
+  transform: translateX(100%)
+  transition: transform .3s
+  +r($sm)
+    padding: 58px 12px 40px
+    width: unset
+    height: 100vh
+  &::before 
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: grey 
+    opacity: 0.5
+  &._header-mob 
+    padding: 0
+    .menu-mobile
+      padding-top: 56px
+    .h5 
+      +r($sm)
+        margin-bottom: 0
+  &._catalog-popup 
+    padding: 0
+    .popup__body
+      max-height: 100vh
+      padding: aCalc(280) aCalc(218) aCalc(118)
+      +r($sm)
+        padding: 58px 12px 40px
+  &._layer-mob
+    transform: translateX(0) translateY(100%)
+    background-color: transparent
+    padding-bottom: 0 !important
+    display: flex
+    height: var(--app-height)
+    .popup__close
+      top: 24px
+      right: 24px
+      background-color: $White 
+      border-radius: 50%
+      &-svg 
+        display: grid 
+        justify-content: center
+        align-items: center
+        width: 26px
+        height: 26px
+        svg, img 
+          width: 16px
+          height: 16px
+    .popup__body
+      //height: 390px
+      position: relative
+      height: max-content
+      margin: 0 -12px
+      background-color: $White
+      align-self: end
+      border-top-left-radius: 12px
+      border-top-right-radius: 12px
+      padding-bottom: 44px
+      // max-width: 100vw 
+      // max-height: 90vh
+      // width: auto 
+      // height: auto
+      .small-card
+        padding: 12px
+        height: unset
+        gap: 12px
+        pointer-events: initial
+        &__content 
+          height: unset
+        &__info 
+          gap: 8px
+        &__description 
+          gap: 12px
+          .review 
+            .text-s 
+              margin-bottom: 0
+  .h3-big 
+    margin-bottom: aCalc(24)
+  .p1-small
+    margin-bottom: aCalc(40)
+  .h5 
+    margin: aCalc(16) 0 aCalc(40) 0
+    +r($sm)
+      margin-top: 0
+      margin-bottom: 24px
+  img, video 
+    width: 100% 
+    height: aClc(217)
+    object-fit: cover
+  .form
+    .text-xlBold 
+      +r($sm)
+        color: $RhinocerosBeetle
+    .text-s 
+      opacity: 0.3
+  &__close 
+    cursor: pointer
+    display: grid 
+    justify-content: flex-end
+    align-items: center
+    position: absolute
+    top: aCalc(20)
+    right: aCalc(20)
+    z-index: 11
+    +r($sm)
+      top: 12px
+      right: 12px
+      border: none
+    &:hover 
+      svg, img 
+        +dsk
+          transform: rotate(90deg)
+    &-svg 
+      +r($sm)
+        border: none
+    svg, img 
+      width: aCalc(24)
+      height: aCalc(24)
+      transition: all .3s
+      +r($sm)
+        width: 24px
+        height: 24px
+  &__body
+    height: 100vh
+    overflow-y: auto
+    padding-bottom: aCalc(80)
+    +r($sm)
+      padding-bottom: 0
+      height: 100%

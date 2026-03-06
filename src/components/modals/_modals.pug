@@ -1,0 +1,22 @@
+.fullscreen-slider
+  template#slide-tpl
+    .swiper-slide.fullscreen-slider__slide
+      .swiper-zoom-container(data-lazy)
+        img()
+  .fullscreen-slider__close(data-fs-close)
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M6 18L18 6" stroke="black" stroke-width="1.5"/>
+      <path d="M18 18L6 6" stroke="black" stroke-width="1.5"/>
+    </svg>
+  .fullscreen-slider__slider.swiper-container
+    .fullscreen-slider__wrapper.swiper-wrapper 
+  .slider-pagination-navigation
+    div.slider-navigation-prev.slide-button.slide-button_horizontal
+      span 
+        svg(xmlns='http://www.w3.org/2000/svg' width='20' height='21' fill='none' viewBox='0 0 20 21')
+          path(stroke='#161616' stroke-linecap='round' stroke-width='2' d='m14.17 2.76-8.34 7.5 8.34 7.5')
+    .swiper-pagination
+    div.slider-navigation-next.slide-button.slide-button_horizontal
+      span 
+        svg(xmlns='http://www.w3.org/2000/svg' width='20' height='21' fill='none' viewBox='0 0 20 21')
+          path(stroke='#161616' stroke-linecap='round' stroke-width='2' d='m14.17 2.76-8.34 7.5 8.34 7.5')

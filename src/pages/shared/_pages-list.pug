@@ -1,0 +1,117 @@
+div
+  style.
+    .pl {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    }
+    .pl .pl__trigger {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      bottom: 0;
+      left: 0;
+    }
+    .pl .pl__ctr {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      background-color: #fff;
+      display: none;
+    }
+    .pl._v .pl__ctr {
+      display: block;
+    }
+    .pl a {
+      display: block;
+      padding: 4px 8px;
+    }
+  .pl(title='List pf pages')
+    .pl__trigger
+    .pl__ctr
+      a(href='index.html')
+        | Index 
+        b 
+          small (index)
+      a(href='exhibition.html')
+        | Exhibition 
+        b 
+          small (exhibition)
+      a(href='plan.html')
+        | Plan 
+        b 
+          small (plan)
+      a(href='projects.html')
+        | Projects 
+        b 
+          small (projects)
+      a(href='page-rent.html')
+        | Page-rent 
+        b 
+          small (page-rent)
+      a(href='page-house.html')
+        | Page-house
+        b 
+          small (page-house)
+      a(href='developers.html')
+        | Developers
+        b 
+          small (developers)
+      a(href='developers-page.html')
+        | Developers-page
+        b 
+          small (developers-page)
+      a(href='news-page.html')
+        | News-page
+        b 
+          small (news)
+      a(href='article-page.html')
+        | Article
+        b 
+          small (article)
+      a(href='contacts.html')
+        | Contacts
+        b 
+          small (contacts)
+      a(href='policy.html')
+        | Policy
+        b 
+          small (policy)
+      a(href='404.html')
+        | 404
+        b 
+          small (404)
+      a(href='thanks.html')
+        | Thanks
+        b 
+          small (thanks)
+  script.
+    (() => {
+    const pl = document.querySelector(".pl");
+    if (!pl) { return }
+    pl.querySelector('.pl__trigger').addEventListener('click', (e) => {
+      pl.classList.toggle('_v');
+    })
+    })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

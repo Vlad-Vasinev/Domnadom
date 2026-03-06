@@ -1,0 +1,515 @@
+body
+  +aProp(--header-height, 72)
+  +mob
+    --header-height: 69px
+
+.header
+  +dsk
+    position: absolute
+    z-index: 3
+    width: 100%
+    height: aCalc(58)
+    background: unset
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+  +r($sm)
+    height: 68px
+    display: none
+  .d-header__user-tour
+    svg 
+      &._white
+        display: block
+    svg 
+      &._black
+        display: none
+  &._active 
+    position: fixed
+    top: 0
+    background-color: $White 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+    .d-header__icon 
+      svg path.path-house
+        fill: $SyntheticPumpkin
+      svg path.path-home
+        fill: $RhinocerosBeetle
+      svg path.path-title
+        fill: $SyntheticPumpkin
+    .d-header .d-header__list
+      a  
+        color: $BaseBlack
+        transition: color .3s
+        &:hover 
+          span
+            +dsk
+              color: $SyntheticPumpkin
+    .d-header__user 
+      .button-m 
+        color: $BaseBlack
+        &:hover 
+          span 
+            +dsk
+              color: $SyntheticPumpkin
+    .d-header__user-tour
+      svg 
+        &._white 
+          display: none
+        &._black
+          display: block
+  &__inner
+    +dsk
+      display: flex
+      +aProp(gap, 8)
+      width: 100%
+      padding: aCalc(8) aCalc(40)
+      padding-bottom: 0
+      justify-content: flex-end
+      position: absolute
+    +mob
+      width: 100%
+      overflow: hidden
+      border-top: none
+      position: fixed
+      align-items: center
+      top: 0
+      width: 100%
+      z-index: map-get($zindex, header)
+      transition: transform 0.4s ease, height 0.5s ease, background-color 0.3s, filter 0.3s
+      // backdrop-filter: blur(4px)
+      background-color: #fff
+
+    > .button_medium.slide-button
+      span
+        font-size: inherit
+        line-height: inherit
+        +dsk
+          padding: aCalc(21) aCalc(24)
+      +mob
+        display: none
+  &__menu-item, .slide-button
+    font-size: aCalc(15)
+    line-height: aCalc(22)
+    text-transform: uppercase
+    +mob
+      font-size: 12px
+      line-height: 16px
+  &__mobile-logo
+    width: 100%
+    height: auto
+    display: block
+    padding: 16px
+    --plus-padding: 16px
+    padding-top: calc(var(--header-height) + var(--plus-padding))
+    img
+      min-height: 10.1984vw
+      width: 100%
+    +dsk
+      display: none
+
+  &__logo
+    width: 12.173913%
+    +aProp(height, 64)
+    padding: aCalc(18) aCalc(20)
+    background: rgba(241, 241, 241, 0.6)
+    backdrop-filter: blur(6px)
+    +aProp(border-radius, 12)
+    flex: 0 0 auto
+    +mob
+      display: none
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+      transition: filter 0.2s
+    &:hover
+      img
+        +dsk
+          filter: brightness(1.37037)
+  &__mobile-title
+    display: none
+    +mob
+      display: block
+  &__menu
+    
+    +dsk
+      background: grey
+      display: flex
+      flex-wrap: nowrap
+      padding: aCalc(10) aCalc(21)
+      background: rgba(241, 241, 241, 0.6)
+      // border-bottom: 1px solid #F1F1F1
+      //backdrop-filter: blur(6px)
+
+      // +aProp(border-radius, 12)
+      align-items: stretch
+      +aProp(gap, 30)
+      width: 100%
+      transition: width 0.30s ease
+
+    +mob
+      display: grid
+      grid-template-columns: auto auto auto 1fr
+      align-items: flex-end
+      width: 100%
+      height: 68px
+      position: relative
+      bottom: 0
+      width: 100%
+      z-index: 1
+      bottom: 0
+      column-gap: 4px
+      transition: background-color 0.3s, filter 0.3s
+    
+  &__menu._sidebar-active
+    background-color: #fff
+    .header__menu-item_mobile
+      +mob
+        visibility: hidden
+        opacity: 0
+        
+    .header__sidebar-back
+      +mob
+        transform: translateX(0)
+  &__section
+    display: flex
+    +mob
+      display: none
+    &_projects
+      margin-right: auto
+    &_contacts
+      margin-right: aCalc(45)
+
+  &__menu-item
+    font-weight: 600
+    display: flex
+    align-items: center
+    padding: 0 aCalc(10)
+    cursor: pointer
+    white-space: nowrap
+    +mob
+      font-size: 12px
+      line-height: 16px
+      padding: 0
+    & > span
+    +dsk
+      &:first-child
+        padding-left: 0
+      &:last-child
+        padding-right: 0
+
+    svg
+      [fill]
+        transition: fill 0.4s linear
+      [stroke]
+        transition: stroke 0.4s linear
+    &_mobile
+      +dsk
+        display: none
+      +mob
+        transition: visibility .25s 0s ease, opacity .25s ease
+        margin-bottom: 8px
+        padding: 12px
+        border-radius: 8px
+        border: 1px solid rgba(14, 14, 14, 0.15)
+        span
+          color: #161616
+          transition: visibility 0s 0s ease, opacity .25s 0.01s ease
+      svg + span
+        +aProp(margin-left, 8)
+        +mob
+          margin-left: 10px
+
+    &_icon
+      display: flex
+      align-items: center
+      +dsk
+        padding-left: 0
+        padding-right: 0
+      +mob
+        width: max-content
+        svg
+          path
+            fill: #161616
+      svg
+        +aProp(height, 22)
+        width: auto
+        aspect-ratio: 1
+        +mob
+          height: 22px
+      > span
+        +mob
+          display: none
+    &_contact
+      position: relative
+      padding: 11px 12px
+      margin-left: 16px
+      svg
+        width: 24px
+        height: 24px
+        background-color: #fff
+        &:nth-child(1)
+
+        &:nth-child(2)
+          position: absolute
+          animation: iconFade 7.5s ease 0s infinite alternate
+    &:hover
+      --fill-color: #2E5E5E
+      +dsk
+        // color: $LightGreen
+        > svg [fill='#161616'], > svg [fill='#000']
+          fill: var(--fill-color)
+        > svg [stroke="#161616"], > svg  [stroke='#000']
+          stroke: var(--fill-color)
+    &.slide-button
+      border: 1px solid rgba(14, 14, 14, 0.15)
+      background-color: unset
+      +aProp(border-radius, 8)
+      margin: 0 aCalc(10)
+      padding: 0
+      +mob
+        margin: 0 10px
+        border-radius: 8px
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
+
+
+      .slide-button-inner > span, > span:only-child
+        padding: aCalc(10) aCalc(16)
+  &__sidebar-back, &__burger
+    +aProp(height, 68)
+
+    aspect-ratio: unset
+    width: auto
+    +aPadd(18, 0)
+    +mob
+      padding: 18px 0
+      height: 68px
+      min-width: 64px
+  &__sidebar-back
+    grid-area: 1 / 1 / 2 / -2
+
+    position: absolute
+    z-index: 3
+    left: 0
+    transform: translateX(-100%)
+    transition: transform .4s ease
+    +dsk
+      display: none
+    svg
+      opacity: 0.2
+      margin: auto
+      +aProp(width, 32)
+      +aProp(height, 32)
+      transition: opacity 0.2s ease
+      +mob
+        width: 32px
+        height: 32px
+    &._active
+      svg
+        opacity: 1
+
+  &__burger
+    grid-area: 1 / -2 / 2 / -1
+    padding: 21px 18px 19px
+    justify-self: flex-end
+    +dsk
+      display: none
+    svg
+      width: 100%
+      height: 100%
+      rect
+        transform-origin: center
+        transition-duration: 0.1s
+        transition-property: transform
+        transition-timing-function: ease !important
+        &:nth-child(1)
+          transition: fill 0.1s linear, opacity 0.1s ease, transform 0.1s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+        &:nth-child(2)
+          transition-duration: 0.1s
+          transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+        &:nth-child(3)
+          transition: fill 0.1s linear, opacity 0.1s ease, transform 0.1s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+    &._active svg
+      rect
+
+        &:nth-child(1)
+          opacity: 0
+
+          transform: translateY(28.125%)
+          transition: fill 0.1s linear, opacity 0.1s ease
+        &:nth-child(2)
+          transform: rotate(45deg)
+          transition-delay: 0.14s
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+        &:nth-child(3)
+
+          transform: rotate(-45deg) translateY(-28.125%)
+          transition: fill 0.1s linear, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  .header__appoint-button
+    +dsk
+      .slide-button-inner > span
+        display: block
+        padding: aCalc(20) aCalc(32)
+        &:nth-child(1)
+          background-color: #fff0
+        &:nth-child(2)
+          // background-color: $LightGreen
+          color: #fff
+        > span
+  .header__mob-ovl-btn
+    position: fixed
+    bottom: 0
+    z-index: map-get($zindex, header)
+    right: 0
+    margin: 6px
+    padding: 14px 16px
+
+.header-sidebar
+  display: none
+  +mob
+    display: block
+    position: fixed
+    // overflow-x: hidden
+
+    top: calc(var(--header-height) - 1px)
+    bottom: 0
+    width: 100vw
+    transform: translateX(-100%)
+    height: auto
+
+    transition: transform .35s ease
+    background-color: #fff
+    z-index: map-get($zindex, dropdown)
+    &._opened
+      transform: translateX(0%)
+  .n-footer__top .n-footer__open ._icon
+    .n-button1:first-child 
+      +r($sm)
+        font-size: 19px
+        text-transform: unset
+  .header-sidebar__step, .header-sidebar__inner
+    padding: 0 24px 30px
+    width: 100%
+    height: 100%
+    background-color: #fff
+    position: absolute
+    display: flex
+    flex-direction: column
+    .header-sidebar__section
+      display: grid
+      align-content: flex-start
+      a
+        display: block
+      * + .h2
+        margin-top: 10px
+      * + .h3
+        margin-top: 12px
+      .button
+        width: 100%
+        text-align: center
+
+    .header-sidebar__row
+      display: block
+      font-weight: 600
+      & + .header-sidebar__row
+        +mob
+          margin-top: 14px
+    
+  .header-sidebar__inner
+    display: grid
+    gap: 32px
+    overflow: auto
+    align-content: flex-start 
+    +mob 
+      display: flex
+  .header-sidebar__step
+    &[data-step-name] 
+      visibility: hidden
+      z-index: -1
+      transition: transform 0s 0.3s, visibility 0s 0.3s
+      transform: translateX(-100%)
+      &._active
+        transform: translateX(0)
+        transition: transform 0.3s, visibility 0s 0s
+        visibility: visible
+        z-index: 1
+.sidebar-list
+  width: 100%
+  display: grid
+  grid-template-columns: 1fr
+  grid-auto-flow: row
+  font-weight: 600
+  &__item
+    width: 100%
+    display: flex
+    justify-content: space-between
+    padding: 8px 0
+    &:first-child
+      padding-top: 0
+    &:last-child
+      padding-bottom: 0
+
+    svg
+      +wah(22px)
+
+.sidebar-gird
+  width: 100%
+  display: grid
+  grid-template-columns: 1fr 1fr
+  column-gap: 8px
+  row-gap: 30px
+  .sidebar-gird__item
+    width: 100%
+
+    .sidebar-gird__img
+      width: 100%
+      height: auto
+      aspect-ratio: 16/13
+      margin-bottom: 10px
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: 12px
+
+.sidebar-contacts
+  display: grid
+  align-content: flex-start
+  gap: 24px
+  // border-top: 1px solid #E5E5E5
+  .sidebar-contacts__row
+    > .h4
+      margin-bottom: 8px
+    a
+      display: block
+    > * + *
+      margin-top: 4px
+    ul
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      width: 100%
+      gap: 10px
+      +mob 
+        flex-wrap: wrap
+      li
+        line-height: inherit
+        font-size: inherit
+        a
+          display: flex
+          justify-content: flex-start
+          align-items: center 
+        svg
+          vertical-align: bottom
+          display: inline-block
+          height: 20px
+          width: auto
+          aspect-ratio: 1
+          margin-right: 4px
+
+@keyframes iconFade
+  0%, 45%
+    opacity: 1
+  55%, 100%
+    opacity: 0

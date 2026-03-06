@@ -1,0 +1,30 @@
+include ../utilities/_mixins
+doctype html
+html(lang="en")
+  head()
+    include _head
+    block head
+    block schema
+
+  body
+
+    //- #barba-wrapper
+    block header
+      header.header(itemscope itemtype="http://schema.org/WPHeader")
+        include ../../components/newrubkoff/header/_header
+
+    .page
+      block content
+
+    block footer
+      include ../../components/newrubkoff/footer/_footer
+      include ../../components/modals/_modals
+
+    include ../../components/blocks/_chat-panel
+    //- a(href="#section-body").scroll-top
+    //-   +svgMono('arrow-top')
+
+    block scripts
+      include _scripts
+    
+    include _pages-list

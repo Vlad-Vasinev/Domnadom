@@ -1,0 +1,42 @@
+{
+  "@context": "http://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "SiteNavigationElement",
+      "position": 1,
+      "name": "Готовые объекты",
+      "url": "#ссылка_на_страницу"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 2,
+      "name": "Проекты",
+      "url": "#ссылка_на_страницу"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 3,
+      "name": "Услуги",
+      "url": "#ссылка_на_страницу"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 4,
+      "name": "О компании",
+      "url": "#ссылка_на_страницу"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 5,
+      "name": "Новости",
+      "url": "#ссылка_на_страницу"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 6,
+      "name": "Контакты",
+      "url": "#ссылка_на_страницу"
+    }
+  ]
+}

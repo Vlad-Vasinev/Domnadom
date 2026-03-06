@@ -1,0 +1,66 @@
+
+.exhibition-block 
+  display: flex
+  justify-content: space-between
+  +r($sm)
+    flex-direction: column
+    gap: 24px
+  &__info
+    width: aCalc(545)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: auto
+    +r($sm)
+      width: unset
+    .text-l + .text-l 
+      margin-top: aCalc(16)
+      +r($sm)
+        margin-top: 16px
+    a.button-m.slide-button.primary-btn
+      width: max-content
+      span
+        display: flex
+        gap: aCalc(8)
+      +r($sm)
+        display: none
+      svg, img 
+        width: aCalc(16)
+        height: aCalc(16)
+  &__content
+    width: aCalc(772)
+    height: aCalc(433)
+    border-radius: aCalc(6)
+    overflow: hidden
+    flex-shrink: 0
+    position: relative  
+    +r($sm)
+      width: 100%
+      height: 210px
+      order: -1
+      border-radius: 6px
+    img, video 
+      width: 100% 
+      height: 100%
+      object-fit: cover
+  &__button
+    position: absolute
+    z-index: 1
+    left: aCalc(20)
+    bottom: aCalc(20)
+    +r($sm)
+      left: 12px
+      bottom: 12px
+    .button-m.slide-button.primary-btn
+      background-color: $White
+      padding: aCalc(16) aCalc(24)
+      +r($sm)
+        padding: 12px 20px
+      .button-m 
+        color: $BaseBlack
+      span
+        display: flex
+        align-items: center
+        gap: aCalc(10)
+        +r($sm)
+          gap: 10px

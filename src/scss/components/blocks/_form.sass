@@ -1,0 +1,200 @@
+
+.form 
+  display: flex
+  flex-direction: column
+  width: unset
+  +r($sm)
+    margin-left: 0
+    margin-right: 0
+    margin-bottom: 271px
+  .text-xlBold
+    margin-bottom: aCalc(24)
+    padding: 0
+    +r($sm)
+      margin-bottom: 16px
+  .text-l
+    margin-bottom: aCalc(60)
+    padding: 0
+    +r($sm)
+      margin-bottom: 24px
+  .form__block + .form__block
+    margin-top: aCalc(12)
+    +r($sm)
+      margin-top: 12px
+  &__block 
+    position: relative
+    z-index: 2
+    box-sizing: border-box
+    border-bottom: 1px solid $BaseBlack
+    +r($sm)
+      height: 40px
+    .just-validate-error-label
+      position: absolute
+      bottom: aCalc(-20)
+      left: 0
+      transition: opacity .3s
+      font-size: aCalc(12)
+      line-height: 110%
+      font-weight: 500
+      +r($sm)
+        font-size: 11px
+        bottom: -20px
+    label.text-label
+      top: 50%
+      transform: translateY(-50%)
+      transition: top .3s, opacity .3s
+      left: 0
+      right: aCalc(25)
+      display: block
+      position: absolute
+      text-transform: uppercase
+      color: $BaseBlack
+      width: auto
+      font-size: aCalc(13)
+      line-height: 110%
+      font-weight: 500
+      text-transform: uppercase
+      color: $BaseBlack
+      z-index: 2
+      pointer-events: none
+      +r($sm)
+        top: auto 
+        bottom: 0
+        left: 0
+        right: 0
+        font-size: 12px
+      &._active 
+        //font-size: aCalc(8)
+        top: 25%
+        //top: -12%
+        opacity: 0.2 
+        +r($sm)
+          font-size: 10px
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active 
+      -webkit-box-shadow: 0 0 0 1000px white inset !important
+      -webkit-text-fill-color: #333 !important
+      transition: background-color 5000s ease-in-out 0s
+    input:-moz-autofill 
+      background-color: white !important
+      color: #333 !important
+    input:-ms-autofill
+      background-color: white !important
+      color: #333 !important
+    input 
+      background-color: $White
+      padding: aCalc(25) aCalc(20) aCalc(8) 0
+      //padding: 0 aCalc(20) aCalc(8) 0
+      -webkit-appearance: none
+      border-radius: aCalc(4)
+      display: block
+      width: 100%
+      font-size: aCalc(26)
+      opacity: 0.2
+      line-height: 120%
+      font-weight: 400
+      text-transform: uppercase
+      color: $BaseBlack
+      transition: opacity .3s
+      +r($sm)
+        border-radius: 4px
+        padding: 0
+        height: 100%
+        font-size: 18px
+        text-transform: initial
+      &::placeholder
+        font-size: aCalc(26)
+        line-height: 120%
+        font-weight: 400
+        text-transform: uppercase
+        color: $BaseBlack
+        opacity: 0.2
+        +r($sm)
+          font-size: 18px
+          text-transform: initial
+      &._active 
+        opacity: 1
+        &::placeholder
+          opacity: 1
+      &[name="name"] 
+        +r($sm)
+          text-transform: capitalize
+
+    &._checkbox
+      height: unset
+      margin-top: aCalc(60) !important
+      border-bottom: unset
+      +r($sm)
+        margin-top: 24px !important
+      .just-validate-error-label 
+        position: unset
+        margin-top: aCalc(5)
+        margin-left: aCalc(32)
+      label
+        cursor: pointer
+        display: flex
+        position: relative
+        input:checked+span 
+          position: relative
+          &::after 
+            content: ""
+            position: absolute
+            left: 37%
+            transform: translateX(-50%)
+            top: 20%
+            width: aCalc(6)
+            height: aCalc(12)
+            border: solid #FF783D
+            border-width: 0 2px 2px 0
+            transform: rotate(45deg)
+            +r($sm)
+              width: 6px
+              height: 12px
+
+      input 
+        position: absolute
+        opacity: 0
+        width: 0
+        height: 0
+        z-index: 100
+        padding: 0
+      span 
+        cursor: pointer
+        display: block
+        flex-shrink: 0
+        width: aCalc(22)
+        height: aCalc(22)
+        border-radius: aCalc(4)
+        margin-right: aCalc(12)
+        border: 1px solid $SyntheticPumpkin
+        box-sizing: border-box
+        transition: background-color .3s, border-color .3s
+        +r($sm)
+          width: 24px
+          height: 24px
+          border-radius: 4px 
+          margin-right: 12px
+          flex-shrink: 0
+  &__block:not(._checkbox)
+
+button.primary-btn, a.primary-btn
+  display: block
+  text-align: center
+  padding: aCalc(18) aCalc(24)
+  background-color: $SyntheticPumpkin
+  color: $White
+  border-radius: aCalc(4)
+  width: 100%
+  margin-top: aCalc(32)
+  +r($sm)
+    border-radius: 4px
+    margin-top: 24px
+    padding: 18px 24px
+
+@keyframes error-animation
+  0%
+    opacity: 0
+  100%
+    opacity: 1

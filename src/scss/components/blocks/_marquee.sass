@@ -1,0 +1,24 @@
+
+.marquee 
+  overflow: hidden
+  position: relative
+  margin: 0 aCalc(-178) aCalc(160)
+  +r($sm)
+    display: flex
+    flex-direction: column
+    gap: 32px
+    margin-bottom: 64px
+  &__block 
+    display: flex
+    gap: aCalc(80)
+    width: fit-content
+    +r($sm)
+      gap: 32px
+    img 
+      width: aCalc(120)
+      height: aCalc(72)
+      flex-shrink: 0
+      object-fit: contain
+      +r($sm)
+        width: 100px 
+        height: 60px

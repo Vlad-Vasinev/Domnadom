@@ -1,0 +1,28 @@
+block vars 
+  - var breadcrumbText = ["Main", "Manufacturers"]
+.page__container
+  .scroll-marker
+  include ../blocks/_dFixedBlock
+
+  section.page__block.d-middle._black(id="firstBlock")
+    include ../blocks/_breadcrumb
+    .text-h1.d-mainTitle Manufacturers
+    ul.filter-links._left 
+      li 
+        a.button-s._active(href="#") Все
+      li 
+        .button-s._filter() Select a company
+          include ../blocks/_filter-popup
+      li 
+        button.button-s() Construction of houses
+      li 
+        button.button-s(href="#") Construction of baths
+      li 
+        button.button-s() Related services
+
+    include ../blocks/_developers-grid
+
+    include ../blocks/_pagination
+
+  section.page__block.d-middle._black
+    include ../blocks/_d-article

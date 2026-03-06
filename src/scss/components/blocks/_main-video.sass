@@ -1,0 +1,118 @@
+
+.main-video 
+  height: 100vh
+  position: relative
+  +r($sm)
+    padding-top: 107px
+    height: 440px
+  img, video 
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &._second
+    position: relative
+    +r($sm)
+      padding-top: 0
+      height: 500px
+    .main-video__info
+      gap: 29.3518518519%
+      flex-direction: column
+      justify-content: space-between
+      width: aCalc(613)
+      height: 47.037037037vh
+      top: auto 
+      bottom: aCalc(60)
+      transform: unset
+      +r($sm)
+        width: unset
+        gap: 101px
+        height: 250px
+        bottom: 24px
+      .text-xlBold
+        width: aCalc(536)
+        text-align: center
+        color: $White
+        margin: 0 auto
+        +r($sm)
+          width: unset
+      .main-video__info-title
+        width: 100%
+        height: unset
+        object-fit: cover
+        +r($sm)
+          width: 301px
+          height: auto
+          margin: 0 auto
+  &__cover 
+    position: absolute
+    z-index: 1
+    left: 0
+    top: 0
+    width: 100% 
+    height: 100%
+    opacity: 0.6
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%)
+    +r($sm)
+      display: none
+  &__info 
+    display: flex
+    justify-content: center
+    gap: aCalc(161)
+    position: absolute
+    z-index: 2
+    top: 50%
+    transform: translateY(-50%)
+    left: 0
+    right: 0
+    margin: 0 auto
+    +r($sm)
+      justify-content: flex-start
+      top: 16px
+      height: 100%
+      transform: unset
+      right: 12px
+      left: 12px
+    .main-video__info-title
+      text-align: center
+      +r($sm)
+        width: unset
+        text-align: unset
+        display: flex
+        height: 92%
+        justify-content: space-between
+        flex-direction: column
+        .text-xxlBold
+          color: $BaseBlack
+    &-address 
+      display: flex
+      flex-direction: column
+      gap: aCalc(6)
+    &-title 
+      width: aCalc(1144)
+      .text-xxlBold 
+        color: $White 
+  &__link 
+    display: flex
+    align-items: center
+    gap: aCalc(8)
+    border-radius: aCalc(6)
+    background-color: $White
+    width: max-content
+    padding: aCalc(18) aCalc(20)
+    color: $SyntheticPumpkin
+    margin: aCalc(40) auto 0
+    +r($sm)
+      padding: 18px 24px
+      margin: 0
+      border-radius: 6px
+    &:hover 
+      .slide-button-inner > span
+        +dsk
+          -webkit-transform: translateY(-100%)
+          -ms-transform: translateY(-100%)
+          transform: translateY(-100%)
+    svg, img 
+      width: aCalc(16)
+      height: aCalc(16)
+      +r($sm)
+        display: none

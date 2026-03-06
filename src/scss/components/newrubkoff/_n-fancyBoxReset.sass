@@ -1,0 +1,180 @@
+.fancybox__backdrop
+  background-color: $White
+
+[data-fancybox-toggle-thumbs], [data-fancybox-toggle-fullscreen], [data-fancybox-toggle-slideshow], [data-panzoom-action]
+  display: none
+
+.fancybox__nav
+  display: none
+
+.fancybox__infobar
+  display: none
+
+.f-thumbs__track
+  width: aCalc(138)
+  flex-direction: column
+  gap: aCalc(4)
+  transform: none !important
+  +r($sm)
+    flex-direction: row
+    width: auto
+    gap: 4px
+    justify-content: center
+
+.f-thumbs.is-horizontal .f-thumbs__track
+  padding: 0
+
+.f-thumbs__track 
+
+
+.f-thumbs__slide.for-image
+  +r($sm)
+    margin: 0 !important
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+
+.fancybox__footer 
+  position: fixed !important
+  bottom: auto !important
+  top: 0 !important
+  left: 0
+  right: 0
+  z-index: 9999
+  width: max-content
+  +r($sm)
+    width: 100%
+    background: unset !important
+    bottom: 32px !important
+    left: 50% !important
+    z-index: 9999
+    transform: translateX(-50%)
+    top: auto !important
+
+.fancybox__caption
+  font-size: aCalc(28)
+  line-height: 120%
+  font-weight: 800 
+  letter-spacing: -0.56px
+  padding-top: aCalc(66)
+  color: $BaseBlack
+  +r($sm)
+    display: none
+
+.fancybox__thumbs.is-horizontal
+  padding: aCalc(20) 0 0 aCalc(20)
+  +r($sm)
+    padding: 0
+
+.f-thumbs__slide
+  width: auto
+  height: aCalc(138)
+  margin-right: 0
+  border: aCalc(2) solid transparent
+  transition: border-color .3s
+  border-radius: aCalc(4)
+  +r($sm)
+    //width: 56px
+    height: 56px
+    border: 2px solid transparent
+    border-radius: 4px
+  img 
+    width: 100%
+    height: 100%
+  .f-thumbs__slide__button
+    width: 100%
+  &.is-nav-selected
+    border-color: $SyntheticPumpkin
+
+.fancybox__nav
+  +r($sm)
+    display: none
+
+.fancybox__slide
+  padding: 0
+  +r($sm)
+    display: grid
+    justify-content: center
+    align-items: center
+
+.fancybox__content
+  width: 74.84375vw !important
+  +r($sm)
+    width: 100% !important
+
+.fancybox__slide::before, .fancybox__slide::after
+  display: none
+
+.fancybox-image
+  object-fit: contain
+  width: aCalc(718)
+  height: 100%
+  margin-top: 0
+  margin-bottom: 0
+  +r($sm)
+    width: 375px
+    height: 375px
+    flex-shrink: 0
+    object-fit: contain
+
+[data-fancybox-close]
+  margin-top: aCalc(20)
+  margin-right: aCalc(20)
+  width: aCalc(32)
+  height: aCalc(32)
+  border-radius: aCalc(4)
+  background-color: transparent
+  +r($sm)
+    margin-top: 0
+    width: 24px
+    height: 24px
+    margin-right: 12px
+    margin-top: 12px
+    border-radius: 4px
+  &:hover 
+    +dsk
+      background-color: transparent !important
+    svg 
+      +dsk
+        transform: rotate(90deg)
+  svg 
+    transition: transform .3s
+    path 
+      fill: $BaseBlack !important
+      stroke: $BaseBlack !important
+
+.f-button.is-next
+  margin-right: aCalc(24)
+  width: aCalc(44)
+  height: aCalc(44)
+  background-position: center
+  border-radius: aCalc(4)
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44' fill='none'%3E%3Crect x='44' y='44' width='44' height='44' rx='4' transform='rotate(180 44 44)' fill='black'/%3E%3Cpath d='M14.7275 21.5455L22.3639 21.5455L30.0003 21.5455M30.0003 21.5455L24.5457 27M30.0003 21.5455L24.5457 16.0909' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E")
+  svg, &::before
+    display: none
+
+.f-button.is-prev
+  margin-left: aCalc(24)
+  width: aCalc(44)
+  height: aCalc(44)
+  border-radius: aCalc(4)
+  background-position: center
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44' fill='none'%3E%3Crect width='44' height='44' rx='4' fill='black'/%3E%3Cpath d='M29.2725 22.4545L21.6361 22.4545L13.9997 22.4545M13.9997 22.4545L19.4543 17M13.9997 22.4545L19.4543 27.9091' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E")
+  svg, &::before
+    display: none
+
+.fancybox__slide.has-html5video
+  .fancybox__content
+    width: 100% !important
+    height: 100% !important
+    +r($sm)
+      width: unset !important
+      height: unset !important
+    video 
+      object-fit: cover !important
+
+.fancybox__slide.has-html5video.has-close-btn.is-selected
+  padding-top: 0
+  [data-fancybox-close]
+    top: 0
+    right: 0

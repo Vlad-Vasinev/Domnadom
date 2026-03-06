@@ -1,0 +1,334 @@
+
+.d-gridSlider
+  @extend .swiper !optional
+  +r($sm)
+    overflow: unset
+  display: none
+  &._active
+    display: block
+  &:not(.swiper-initialized)
+    .d-grid
+      +r($sm)
+        display: grid
+        align-items: unset
+        grid-auto-columns: 82.812%
+        -ms-grid-columns: unset
+        grid-template-columns: unset
+        grid-auto-flow: column
+        gap: 10px
+  & ~ a.accent-link
+    margin: aCalc(20) auto
+    width: max-content
+
+.d-grid 
+  @extend .swiper-wrapper !optional
+  display: grid 
+  grid-template-columns: repeat(3, 1fr)
+  gap: aCalc(48) aCalc(18)
+  +r($sm)
+    display: flex
+    gap: unset
+  &.small 
+    grid-template-columns: repeat(5, 1fr)
+    gap: aCalc(20)
+    border-bottom: none
+    +r($sm)
+      display: none
+      gap: unset
+    & ~ a.accent-link
+      margin: aCalc(40) 0 0
+      +r($sm)
+        margin: 24px 0 0
+  &._noSlider 
+    +r($sm)
+      flex-direction: column
+      gap: 40px
+      width: 100vw
+      margin: 0 -12px
+    .d-card
+      +r($sm)
+        border-radius: 0
+    .d-card .d-card__content
+      +r($sm)
+        border-radius: 0
+        height: 256px
+    .d-card__info
+      +r($sm)
+        padding: 0 12px
+
+.d-card 
+  @extend .swiper-slide !optional
+  display: flex
+  flex-direction: column
+  gap: aCalc(16)
+  position: relative
+  overflow: hidden
+  border-radius: aCalc(6)
+  +r($sm)
+    gap: 12px
+    border-radius: 6px
+  &:hover 
+    img 
+      +dsk
+        transform: scale(1.05)  
+    .d-card__info .top 
+      .text-lBold 
+        +dsk
+          color: $SyntheticPumpkin
+      span 
+        +dsk
+          color: $SyntheticPumpkin
+  img, video 
+    transition: .3s
+    transform-origin: center center
+    backface-visibility: hidden
+    will-change: transform
+    transform: translateZ(0)
+  &._last 
+    height: aCalc(320)
+    +r($sm)
+      height: 189px
+    img, video 
+      position: absolute
+      width: 100%
+      height: 100%
+      object-fit: cover
+      left: 0
+      top: 0
+      z-index: 1
+    .d-card__cover 
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 1
+      display: grid 
+      justify-content: center
+      align-items: center
+      background-color: rgba(0, 0, 0, 0.5)
+      +r($sm)
+        -webkit-transform: translate3d(0, 0, 0)
+        -webkit-transform-style: preserve-3d
+      .link 
+        background-color: $White 
+        padding: aCalc(10) aCalc(16)
+        border-radius: aCalc(4)
+        color: $BaseBlack
+        +r($sm)
+          border-radius: 4px
+          padding: 10px 16px
+  .label-list 
+    position: absolute
+    z-index: 1
+    top: aCalc(6)
+    left: aCalc(6)
+    +r($sm)
+      top: 6px
+      left: 6px
+  .title-label 
+    position: absolute
+    bottom: aCalc(6)
+    padding: aCalc(6) aCalc(10)
+    left: aCalc(6)
+    border-radius: aCalc(4)
+    background: rgba(0, 0, 0, 0.20)
+    backdrop-filter: blur(18px)
+    -webkit-backdrop-filter: blur(18px)
+    color: $White
+    z-index: 1
+    transform: translateZ(0)
+    +r($sm)
+      bottom: 6px 
+      left: 6px 
+      border-radius: 4px
+      padding: 5px 8px
+      -webkit-transform: translate3d(0, 0, 0)
+      -webkit-transform-style: preserve-3d
+  &__content 
+    height: aCalc(320)
+    border-radius: aCalc(6)
+    overflow: hidden
+    position: relative
+    +r($sm)
+      border-radius: 6px
+      height: 189px
+      transform: translateZ(0)
+    img, video 
+      width: 100%
+      height: 100% 
+      object-fit: cover
+  &__info 
+    display: flex
+    flex-direction: column
+    gap: aCalc(8)
+    transition: opacity .3s
+    +r($sm)
+      gap: 8px
+    .top 
+      display: flex
+      align-items: center
+      gap: aCalc(8)
+      +r($sm)
+        gap: 8px
+      span:not(.text-lBold) 
+        color: $Silverback
+    .bottom 
+      display: flex
+      align-items: center
+      .title 
+        display: flex
+        align-items: center
+        gap: aCalc(6)
+        +r($sm)
+          gap: 6px
+        img, svg
+          width: aCalc(24) 
+          height: aCalc(24)
+          +r($sm)
+            width: 24px
+            height: 24px
+      .star 
+        margin-left: aCalc(12)
+        display: flex
+        align-items: center
+        gap: aCalc(3)
+        +r($sm)
+          gap: 3px
+          margin-left: 12px
+        svg, img 
+          width: aCalc(16) 
+          height: aCalc(16)
+          +r($sm)
+            width: 16px
+            height: 16px
+      .review 
+        margin-left: aCalc(8)
+        display: flex
+        align-items: center
+        gap: aCalc(3)
+        +r($sm)
+          margin-left: 8px
+          gap: 3px
+        svg, img 
+          width: aCalc(16) 
+          height: aCalc(16)
+          +r($sm)
+            width: 16px
+            height: 16px
+        .text-s 
+          color: $NamaraGrey
+
+.d-gridSliderSmall
+  @extend .swiper !optional
+  display: none 
+  +r($sm)
+    display: block
+    overflow: unset
+  &:not(.swiper-initialized)
+    .d-grid.small
+      +r($sm)
+        display: grid
+        align-items: unset
+        grid-auto-columns: 70.812%
+        -ms-grid-columns: unset
+        grid-template-columns: unset
+        grid-auto-flow: column
+        gap: 10px
+  .d-grid.small
+    @extend .swiper-wrapper !optional
+    display: flex
+    align-items: stretch 
+    .d-gridCard 
+      height: 100%
+      @extend .swiper-slide !optional
+      display: flex
+      flex-direction: column
+      gap: 10px
+      &__info
+        flex-shrink: 0
+
+.card-small 
+  padding: aCalc(20)
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  background-color: $LynxWhite
+  min-height: aCalc(180)
+  border-radius: aCalc(6) 
+  transition: background-color .3s
+  +r($sm)
+    border-radius: 6px
+    padding: 12px
+    gap: 35px
+    min-height: 116px
+  &:hover 
+    .arrow 
+      +dsk
+        opacity: 1
+  &._active 
+    background-color: $Snowflake
+  &__content 
+    height: unset
+    position: relative
+    +r($sm)
+      width: 156px
+      height: 64px
+    img, svg 
+      width: auto
+      height: auto
+      max-height: aCalc(73)
+      max-width: 100%
+      object-fit: cover
+      +r($sm)
+        width: auto 
+        height: auto
+        max-width: 100%
+        max-height: 100%
+        object-fit: cover
+    .normal-image
+      transition: opacity .3s
+      &._active 
+        opacity: 0
+    .active-image
+      transition: opacity .3s
+      opacity: 0
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 1
+      +r($sm)
+        display: none
+      &._active 
+        opacity: 1
+  &__info 
+    display: flex
+    align-items: center
+    .star 
+      margin-right: aCalc(12)
+      display: flex
+      align-items: center
+      gap: aCalc(3)
+      +r($sm)
+        margin-right: 8px
+        gap: 3px
+    .review 
+      margin-left: unset
+      display: flex
+      align-items: center
+      gap: aCalc(3)
+      +r($sm)
+        gap: 3px
+      .text-s
+        color: $NamaraGrey
+    .arrow 
+      display: grid 
+      justify-content: center
+      align-items: center
+      width: aCalc(32)
+      height: aCalc(32)
+      background-color: $White
+      border-radius: aCalc(40)
+      margin-left: auto
+      transition: opacity .3s
+      opacity: 0

@@ -1,0 +1,25 @@
+
+.copy 
+  padding: aCalc(10) aCalc(16)
+  background-color: $BaseBlack 
+  border-radius: aCalc(12)
+  display: flex
+  align-items: center
+  gap: aCalc(10)
+  display: none 
+  transition: background-color .3s
+  cursor: pointer
+  +r($sm)
+    padding: 10px 16px
+    border-radius: 12px
+    gap: 10px
+  svg, img 
+    width: aCalc(24)
+    height: aCalc(24)
+    +r($sm)
+      width: 22px !important
+      height: 22px !important
+  &.copy--copied 
+    display: flex
+  &.copy--active 
+    background-color: $OldBrownCrayon
